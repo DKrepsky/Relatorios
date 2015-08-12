@@ -1,0 +1,100 @@
+\newpage
+
+\section{Resultados}
+
+\subsection{Experimento 1}
+Para Rz foi considerado que o diodo D1 necessita de uma corrente de 80mA para manter a tensão estável. Sendo assim, o valor de Rz (calculado com a eq. \ref{eqRz}) foi de $108.75 \Omega$, com valor comercial mais próximo de $120 \Omega$.
+
+\begin{equation}
+Rz = \tfrac{Vcc - Vz}{80mA}
+\label{eqRz}
+\end{equation}
+
+Foram definidas as escalas $1k \Omega$, $10k \Omega$  e $100k \Omega$, de modo que quando o valor de Rx for o limite da escala, a saída Vo será 10V. Os valores encontrados para os resistores R1, R2 e R3 são $330 \Omega$, $3.3k \Omega$  e  $33k \Omega$, respectivamente.
+
+A tabela \ref{tab1} mostra o valor das resistências testadas, o valor na saída Vo e a corrente mensurada com o amperimetro.
+
+\begin{small}
+\begin{table}[H]
+\begin{center}
+\caption{Valores de Vo e Iout medidos.}
+
+\begin{tabular}{l|l|l}
+\hline
+Rx $[\Omega]$ & Vo [V]& Iout [$\mu A$]\\
+\hline
+560 & 5.24 & 818\\
+\hline
+820 &  7.84 & 958\\
+\hline
+2.2k & 2.07 & 649\\
+\hline
+4.7k & 4.46 & 777\\
+\hline
+15k & 1.43 & 615\\
+\hline
+47k & 4.52 & 780\\
+\hline
+
+\end{tabular}
+\label{tab1}
+\end{center}
+\end{table}
+\end{small}
+
+\subsection{Pergunta 1}
+\textbf{Qual amplificador você poderia usar para reduzir erros de offset e corrente de polarização?}
+
+Poderia ser utilizado um AmpOp de melhor qualidade, como por exemplo amplificadores operacionais feitos com JFET (TL082).
+
+\subsection{Experimento 2}
+A tabela \ref{tab2} mostra o valor das resistências escolhidas, o ganho calculado para cada resistência e o ganho medido.
+
+O ganho calculado foi obtido através da equação do ganho para amplificadores não-inversores (eq. \ref{eq2}).
+
+\begin{equation}
+G = 1 +\tfrac{Rx}{R8}
+\label{eq2}
+\end{equation}
+
+O ganho medido foi obtido aplicando-se uma entrada senoidal de frequência 1KHz e amplitude 1mV.
+
+Foram considerados para o projeto a capacidade de \textit{sink/source} do CI 4051 e a saturação do AmpOp.
+
+\begin{small}
+\begin{table}[H]
+\begin{center}
+\caption{Ganho calculado e medido para cada resistor.}
+
+\begin{tabular}{l|l|l}
+\hline
+Rx $[\Omega]$ & G calculado [V/V] & G medido [V/V]\\
+\hline
+1k & 2 & 1.7\\
+\hline
+4.7k &  5.7 & 5.3\\
+\hline
+8.2k & 9.2 & 9.0\\
+\hline
+22k & 23 & 22.4\\
+\hline
+47k & 48 & 48.0\\
+\hline
+100k & 101 & 100.4\\
+\hline
+220k & 221 & 222.0\\
+\hline
+470k & 471 & 469.6\\
+\hline
+
+\end{tabular}
+\label{tab2}
+\end{center}
+\end{table}
+\end{small}
+
+
+\subsection{Pergunta 2}
+\textbf{Que modificação poderia ser feita no circuito anterior para o ganho unitário ser possível?}
+
+Poderia ser utilizado dois amplificadores inversores em cascata.
