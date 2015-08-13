@@ -1,0 +1,252 @@
+\newpage
+\section{Resultados}
+
+\subsection{Circuito de proteção com diodo Zener}
+O diodo utilizado possui corrente máxima de $80mA$. Sendo assim, o valor de $R_z$ calculado, utilizando a equação \ref{e_rz}, foi de
+
+\[ R_z = \frac{7.1 - 5.1}{80.10^{-3}} = 25 \Omega.\]
+
+O valor comercial mais próximo, e que foi utilizado, é o de $27\Omega$.
+
+A tabela \ref{t_zener} mostra os dados obtidos durante o experimento e a figura \ref{f_plotzener} mostra o gráfico.
+
+\begin{small}
+	\begin{table}[H]
+		\begin{center}
+			\caption{Tensão de entrada e tensão de saída para o diodo zener.}
+			\begin{tabular}{l|l}
+				\hline
+				$V_{in}$ [V] & $V_o$ [V] \\
+				\hline
+				-2.02  & -0.840 \\
+				\hline
+				-1.40  & -0.822 \\
+				\hline
+				-0.8  & -0.757 \\
+				\hline
+				-0.2  & -0.220 \\
+				\hline
+				0.39  & 0.39 \\
+				\hline
+				1.00  & 1.00 \\
+				\hline
+				1.60  & 1.60 \\
+				\hline
+				2.25  & 2.24 \\
+				\hline
+				2.88  & 2.88 \\
+				\hline
+				3.37  & 3.37 \\
+				\hline
+				3.99  & 3.99 \\
+				\hline
+				4.64 & 4.64 \\
+				\hline
+				5.21 & 5.17 \\
+				\hline
+				5.81 & 5.26 \\
+				\hline
+				6.40 & 5.32 \\
+				\hline
+				6.98 & 5.37 \\
+				\hline
+			\end{tabular}
+			\label{t_zener}
+		\end{center}
+	\end{table}
+\end{small}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{img/plotzener.png}
+	\caption{Circuito de proteção com diodo Zener.}
+	\label{f_plotzener}
+\end{figure}
+
+\subsection{Circuito de proteção com diodo 1N4148}
+O diodo utilizado possui corrente máxima de $200mA$. Sendo assim, o valor de $R_z$ calculado, utilizando a equação \ref{e_rz}, foi de
+
+\[ R_z = \frac{7.1 - 5.1 - 0.7}{200.10^{-3}} = 6.5 \Omega.\]
+
+O valor comercial mais próximo, e que foi utilizado, é o de $10\Omega$.
+
+A tabela \ref{t_1n4148} mostra os dados obtidos durante o experimentoe a figura \ref{f_plot1n4148} mostra o gráfico.
+\begin{small}
+	\begin{table}[H]
+		\begin{center}
+			\caption{Tensão de entrada e tensão de saída para o diodo 1N4148.}
+			\begin{tabular}{l|l}
+				\hline
+				$V_{in}$ [V] & $V_o$ [V] \\
+				\hline
+				0.00 & 0.00 \\
+				\hline
+				0.36 & 0.32 \\
+				\hline
+				0.90 & 0.81 \\
+				\hline
+				1.10 & 1.00 \\
+				\hline
+				1.60 & 1.45 \\
+				\hline
+				1.81 & 1.64 \\
+				\hline
+				2.03 & 1.86 \\
+				\hline
+				2.52 & 2.30 \\
+				\hline
+				2.95 & 2.70 \\
+				\hline
+				3.40 & 3.10 \\
+				\hline
+				3.85 & 3.53 \\
+				\hline
+				4.31 & 3.94 \\
+				\hline
+				4.77 & 4.33 \\
+				\hline
+				5.01 & 4.55 \\
+				\hline
+				5.46 & 4.95 \\
+				\hline
+			\end{tabular}
+			\label{t_1n4148}
+		\end{center}
+	\end{table}
+\end{small}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{img/plot1n4147.png}
+	\caption{Circuito de proteção com diodo 1N4148.}
+	\label{f_plot1n4148}
+\end{figure}
+
+\subsection{Circuito de proteção com diodo germânio}
+O diodo utilizado possui corrente máxima de $1 \mu A$. Sendo assim, o valor de $R_z$ calculado, utilizando a equação \ref{e_rz}, foi de
+
+\[ R_z = \frac{7.1 - 5.1 - 0.3}{1.10^{-6}} = 1.7 M \Omega.\]
+
+O valor comercial mais próximo, e que foi utilizado, é o de $2 M \Omega$.
+
+A tabela \ref{t_germânio} mostra os dados obtidos durante o experimento e a figura \ref{f_plotgermanio} mostra o gráfico.
+
+\begin{small}
+	\begin{table}[H]
+		\begin{center}
+			\caption{Tensão de entrada e tensão de saída para o diodo de germânio.}
+			\begin{tabular}{l|l}
+					\hline
+					$V_{in}$ [V] & $V_o$ [V] \\
+					\hline
+					0.00 & 0.00 \\
+					\hline
+					0.40 & 0.40 \\
+					\hline
+					0.91 & 0.90 \\
+					\hline
+					1.51 & 1.50 \\
+					\hline
+					1.85 & 1.84 \\
+					\hline
+					2.17 & 2.17 \\
+					\hline
+					2.68 & 2.68 \\
+					\hline
+					3.06 & 3.06 \\
+					\hline
+					3.60 & 3.60 \\
+					\hline
+					3.96 & 3.96 \\
+					\hline
+					4.45 & 4.45 \\
+					\hline
+					4.96 & 4.96 \\
+					\hline
+					5.21 & 5.19 \\
+					\hline
+					5.92 & 5.27 \\
+					\hline
+					6.34 & 5.29 \\
+					\hline
+					6.79 & 5.29 \\
+					\hline
+					7.10 & 5.29 \\
+					\hline
+			\end{tabular}
+			\label{t_germânio}
+		\end{center}
+	\end{table}
+\end{small}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{img/plotgermanio.png}
+	\caption{Circuito de proteção com diodo de germânio.}
+	\label{f_plotgermanio}
+\end{figure}
+
+\subsection{Termistor com corrente constante}
+A tabela \ref{t_termistor} mostra os dados obtidos para o termistor NTC com o circuito de corrente constante e a figura \ref{f_plottermistor} mostra a curva característica do sensor.
+
+\begin{small}
+	\begin{table}[H]
+		\begin{center}
+			\caption{Tensão de entrada e tensão de saída para o diodo de germânio.}
+			\begin{tabular}{c|c}
+				\hline
+				$Temperatura$ [ºC] & $V_o$ [V] \\
+				\hline
+				26 & 7.35 \\
+				\hline
+				28 & 6.92 \\
+				\hline
+				29 & 6.81 \\
+				\hline
+				30 & 6.61 \\
+				\hline
+				31 & 6.63 \\
+				\hline
+				32 & 5.72 \\
+				\hline
+				33 & 6.32 \\
+				\hline
+				34 & 5.33 \\
+				\hline
+				35 & 5.47 \\
+				\hline
+				39 & 4.25 \\
+				\hline
+				42 & 3.85 \\
+				\hline
+				43 & 3.64 \\
+				\hline
+				46 & 3.33 \\
+				\hline
+				47 & 1.66 \\
+				\hline
+				52 & 1.35 \\
+				\hline
+				54 & 1.882 \\
+				\hline
+				56 & 1.19 \\
+				\hline
+				63 & 0.98 \\
+				\hline
+				68 & 0.93 \\
+				\hline
+				69 & 0.87 \\
+				\hline
+			\end{tabular}
+			\label{t_termistor}
+		\end{center}
+	\end{table}
+\end{small}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.9]{img/plottermistor.png}
+	\caption{Saída de tensão para o termistor NTC.}
+	\label{f_plottermistor}
+\end{figure}
