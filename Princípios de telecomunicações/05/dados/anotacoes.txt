@@ -1,0 +1,15 @@
+lab é o item 3.1 do 1 ao 3
+
+freq. medida através do evaluate measurement do OrCAD
+10.01088meg
+
+freq. medida com influência da ponta de prova 10Meg/12p
+10.01155meg
+
+3) 
+
+f96  = 10.01071e6  %meg
+f12   = 10.01088 %meg
+f144 = 10.01119e6  %meg
+
+estab = ((f144 - f96)/f12)/(14.4-9.6)

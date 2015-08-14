@@ -1,0 +1,39 @@
+circuito 1.
+
+Ganho calculado = 1.56
+ganho simulado = 3.862db
+
+tipo FPB
+Fc = 5058 Hz
+
+Fc calc = 5170 Hz
+
+Atenuação/dec = -40dB/dec
+ordem 2
+
+
+
+
+
+
+
+cir2 
+
+primeiro
+ordem 2
+tipo fpb
+fc 4395
+fc calc 4545
+ganho = -151
+Atenuação/dec = -38.7dB/dec
+
+segundo 
+ganho -154
+ordem 4
+tipo fpb
+fc 3039
+Atenuação/dec = -22dB/oitava
+
+
+cir 3
+f = 2735
