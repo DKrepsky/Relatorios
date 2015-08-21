@@ -1,0 +1,18 @@
+
+C = 1/((2piF)^2*L) = 2.533pF
+
+Fc = 99.541K
+BW = 2.8321K
+Q = 35.1474
+
+Vmax = 4.6869
+Vmin = 1.0073
+m = 0.6462
+
+Amp bandas laterais
+102KHz = 927.979m
+98KHz = 1.2354
+
+Amp carrier
+3.0504
+

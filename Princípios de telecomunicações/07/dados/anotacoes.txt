@@ -1,0 +1,14 @@
+3) metodo 1) im = (4.4988-1.7184)/(4.4988+1.7184) = 0.4472
+   metodo 2) im = (8.2133-3.4907)/(8.2133+3.4907) = 0.4035 //justificado pela dificuldade de leitura precisa
+
+m proximo de 0 = 0.0546
+m maior que 1 = usar 5V e 4,5 ou 5V no modulante	
+
+QL = 106.98e3/54.70484 = 1955,6
+fcentral = 106.98k
+bw3dB = 54.70484
+
+(terminar em casa)
+da fft:
+amplitude em fc: 
+amplitude raias DSB: 
