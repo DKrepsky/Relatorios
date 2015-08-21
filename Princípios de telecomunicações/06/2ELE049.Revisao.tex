@@ -1,0 +1,83 @@
+\section{TEORIA}
+
+\subsection{Misturador ativo}
+Um misturador é um elemento capaz de realizar o produto de dois sinais:
+	\begin{figure}[H]
+		\centering
+		\subfigure[Símbolo]
+			{
+			\centering
+			\includegraphics[scale=0.4]{imagens/mult.png}
+			}
+		\subfigure[Esquemático]
+			{
+			\centering
+			\vspace{-1in}
+			\includegraphics[scale=0.4]{imagens/mixer.png}
+			}
+		\caption{Misturador}
+	\end{figure}
+
+Caso as entradas sejam senoidais:
+	\begin{equation}
+		\begin{cases}
+			\begin{array}{rcl}
+				V_1          & = & A_{in} \cdot sen(\omega_{in}\cdot t) \\
+				V_2          & = & A_{c} \cdot sen(\omega_{c}\cdot t) \\
+				V_1\cdot v_2 & = & A_{in} \cdot( cos[(\omega_{in} - \omega_{c})\cdot t] - cos[(\omega_{in} + \omega_{c})\cdot t])
+			\end{array}
+		\end{cases}
+	\end{equation}
+
+Além de executar a multiplicação dos dois sinais, o circuito possui um filtro passa-faixas na saída do transistor. Assim, uma das componentes senoidais do sinal $V_1\cdot V_2$ é suprimida. Esse processo é feito, por exemplo, na modulação do sinal AM-SSB, onde além da portadora ser suprimida, uma das componentes laterais simétricas do espectro da informação é suprimida:
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{imagens/ssb.png}
+		\caption{modulação AM-SSB}
+	\end{figure}
+
+\subsubsection{Frequência intermediária}
+Quando o sinal de saída filtrado possui a frequência $(\omega_{in} - \omega_{c})$, o mixer é denominado down-converter. Caso contrário, o mixer é denominado up-converter, ou seja, a saída do circuito possui uma frequência $(\omega_{in} + \omega_{c})$. Tal frequência de saída é denominada frequência intermediária. Para frequência em hertz:
+	\begin{equation}
+		\begin{cases}
+			\begin{array}{rcl}
+				Down-Converter: &\: & f_{FI} = f_c - f_{in} \\
+				Up-Converter:   &\: & f_{FI} = f_c + f_{in}
+			\end{array}
+		\end{cases}
+	\end{equation}
+	
+\subsubsection{Frequência imagem}
+A frequência imagem introduz um sinal espúrio devido a saída do misturador possuir a soma e subtração das frequências de entrada e saída. Isso gera um ruído indesejável, e deve-se evitar essa situação com um filtro na entrada do misturador.
+	\begin{equation}
+		\begin{cases}
+			\begin{array}{rcl}
+				Down-converter: &\: & f_{IM} = f_c + 2\cdot f_{FI} \\
+				Up-converter:   &\: & f_{IM} = 2\cdot f_{FI} - f_c
+			\end{array}
+		\end{cases}
+	\end{equation}
+	
+	
+\subsubsection{Ganho}
+O ganho do circuito é dado por:
+	\begin{equation}
+		G_v = g_m \cdot R_L
+		\label{eq:ganho}
+	\end{equation}
+
+	
+\subsection{Equação universal da seletividade}
+A seguinte equação consegue relacionar a atenuação/ganho do sinal em função da frequência de oscilação e do fator de qualidade de um circuito ressonante.
+	\begin{equation}
+		\frac{E_0}{E} = \sqrt{ 1 + Q^2 \cdot \left( \frac{f}{f_0} - \frac{f_0}{f} \right)^2 } 
+		\label{eq:sel}
+	\end{equation}
+	
+		\begin{itemize}[noitemsep,nolistsep]
+			\item[$\bullet$]$f_0$ - frequência de ressonância;
+			\item[$\bullet$]$f$ - frequência em que se deseja determinar a magnitude do sinal;
+			\item[$\bullet$]$E_0$ - tensão do sinal na frequência de ressonância;
+			\item[$\bullet$]$E$ - tensão do sinal na frequência $f$
+			\item[$\bullet$]$Q$ - fator de qualidade do circuito.
+		\end{itemize}

@@ -1,0 +1,93 @@
+\section{RESULTADOS E ANÁLISE DE DADOS}
+
+\subsection{Determinação do filtro}
+Para um indutor de primário de $5\, [\mu H]$ e uma frequência intermediária de $425\, [kHz]$, é necessário o seguinte capacitor para o filtro:
+	\begin{equation}
+		f_0 = \dfrac{1}{2\cdot \pi\cdot \sqrt{L \cdot C}} \rightarrow 
+		C   = \dfrac{1}{(2\cdot\pi\cdot f_0)^2 \cdot L} = \dfrac{1}{(2\cdot\pi\cdot 425\cdot 10^3)^2\cdot 5\cdot 10^{-6}}
+		    = 28,04\, [nF]
+	\end{equation}
+
+\subsubsection{Fator de mérito do filtro}
+
+A partir da resposta em frequência do filtro (figura \ref{f_bode filtro}), é possível identificar a largura de banda e a frequência de oscilação, os quais foram suficientes para determinar o fator de qualidade do circuito:
+
+\begin{equation}
+    Q = \dfrac{f_0}{B_{3dB}} = \dfrac{424.2\cdot 10^3}{36,65\cdot 10^3} = 11,577
+\end{equation}
+
+	\begin{figure}[H]
+        \centering
+        \includegraphics[scale=.45]{imagens/bode_filtro.png}
+        \caption{Resposta em frequência do filtro.}
+        \label{f_bodefiltro}
+    \end{figure}
+    
+\subsection{Down-converter}
+A figura /ref{f_saida_down} mostra a saída do mixer para o down-converter. Já a figura \ref{fft_down} mostra o espectro do sinal de saída do down-converter.
+
+	\begin{figure}[H]
+        \centering
+        \includegraphics[scale=.45]{imagens/saida_down.png}
+        \caption{Sinal de saída do down-converter.}
+        \label{f_saida_down}
+    \end{figure}
+    
+    	\begin{figure}[H]
+            \centering
+            \includegraphics[scale=.45]{imagens/fft_down.png}
+            \caption{FFT do down-converter.}
+            \label{fft_down}
+        \end{figure}
+        
+\subsubsection{Fator de qualidade}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=.45]{imagens/bode_down.png}
+		\caption{Resposta em frequência do down-converter.}
+		\label{f_bodedown}
+	\end{figure}
+
+Do gráfico \ref{f_bodedown}, é possível identificar a largura de banda e a frequência de oscilação, os quais foram suficientes para determinar o fator de qualidade do circuito:
+
+    	\begin{equation}
+            Q = \dfrac{f_0}{B_{3dB}} = \dfrac{423.7\cdot 10^3}{15.95\cdot 10^3} = 26,564
+        \end{equation}
+	
+Através do cálculo anterior, foi possível observar grande concordância entre os resultados práticos e os teóricos.
+
+\subsection{Up-converter}
+A figura /ref{f_saida_up} mostra a saída do mixer para o up-converter. Já a figura \ref{fft_up} mostra o espectro do sinal de saída do up-converter.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.45]{imagens/saida_up.png}
+    \caption{Sinal de saída do up-converter.}
+    \label{f_saida_up}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.45]{imagens/fft_up.png}
+    \caption{FFT do up-converter.}
+    \label{fft_up}
+\end{figure}
+
+	
+		
+\subsection{Uso de um amplificador seguidor de emissor}
+O uso do amplificador seguidor de emissor tem a tendência de casar impedâncias, assim, o sinal é conservado. Além disso, tal amplificador permite o uso de cargas maiores, as quais não poderiam ser aplicadas ao estágio anterior. A figura a seguir mostra o comportamento do circuito, através dos sinais de entrada e saída deste estágio:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.45]{imagens/saida_down_buffer.png}
+    \caption{Sinal de saída do mixer com buffer.}
+    \label{f_saida_down_buffe}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.45]{imagens/fft_down_buffer.png}
+    \caption{FFT do mixer com buffer.}
+    \label{fft_down_buffe}
+\end{figure}
