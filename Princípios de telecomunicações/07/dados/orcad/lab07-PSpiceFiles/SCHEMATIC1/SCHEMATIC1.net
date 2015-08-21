@@ -1,0 +1,19 @@
+* source LAB07
+V_V1         N00379 0  
++SIN 0 2 200 0 0 0
+V_V2         N01173 0  
++SIN 0 5 100k 0 0 0
+R_R1         0 N00275  1k  
+R_R2         N00451 VCC  100k  
+R_R3         0 N00451  68k  
+R_R4         N01848 N01020  10k  
+L_L1         N02301 0  1mH  
+R_R5         0 N01461  10k  
+V_V3         VCC 0 12
+C_C4         0 N02301  2.2n  
+Q_Q1         VCC N00451 N01020 QBF240/PLP 
+C_C1         N00410 N00451  22u  
+C_C2         N01173 N01461  100n  
+C_C3         N01848 N02301  1n  
+Q_Q2         N01848 N01461 0 QBF240/PLP 
+X_POT1         N00275 N00410 N00379 POT PARAMS: SET=0.5 VALUE=100k
