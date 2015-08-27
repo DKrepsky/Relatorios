@@ -31,11 +31,9 @@
 
 % Figuras
 \usepackage{graphicx}
-\usepackage{wrapfig}
-\usepackage{float}
-\usepackage{subfigure}
-\graphicspath{ {img/} }
 
+%\usepackage{wrapfig}
+\usepackage{float}
 
 % Língua e acentos
 \usepackage[brazil]{babel}
@@ -46,38 +44,39 @@
 \usepackage[top=3cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 \usepackage{indentfirst}
 
-% Pagina em branco
 \usepackage{afterpage}
-\newcommand \blankpage{
-	\null
-	\thispagestyle{empty}
-	\addtocounter{page}{-1}
-	\newpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
 
 % Lista de códigos
 \usepackage{listings}                   % para formatar código-fonte
 \lstset{numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=5pt, basicstyle=\scriptsize , frame=trbl}
 
-% Enumerate
+%\usepackage{enumerate}
 \usepackage{enumitem}
 
-% Diagramas
-\usepackage{tikz}
-\usetikzlibrary{positioning}
+% Latexdraw
+%\usepackage[usenames,dvipsnames]{pstricks}
+%\usepackage{epsfig}
+%\usepackage{pst-grad} % For gradients
+%\usepackage{pst-plot} % For axes
 
 %------------------------------------------------------------------------------
 
 \begin{document}
 
-\input{01_capa.tex}
-\input{02_resumo.tex}
-\input{03_sumario.tex}
-\input{04_introducao.tex}
-\input{05_teoria.tex}
-\input{06_metodologia.tex}
-\input{07_resultados.tex}
-\input{08_conclusao.tex}
-\input{09_referencias.tex}
+\input{capa.tex}
+\input{resumo.tex}
+\input{sumario.tex}
+\input{introducao.tex}
+\input{teoria.tex}
+\input{metodologia.tex}
+\input{resultados.tex}
+\input{conclusao.tex}
+\input{referencias.tex}
 
 
 \end{document}
