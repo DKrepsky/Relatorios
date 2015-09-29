@@ -1,0 +1,13 @@
+fig. X - circ.png
+
+Através da variação da quantidade de massa sobre o Strain Gauge montado no circuito da fig. X, foi possível gerar a seguinte tabela de medidas.
+
+tab. X - Valores medidos
+
+Através dos valores da tabela, foi gerado um gráfico com o auxílio do software MATLAB para melhor visualização dos resultados.
+
+fig. Y - graf.jpg
+
+Pode-se observar nas 3 curvas das medidas obtidas, uma leve variação nos parâmetros devido à incerteza.
+
+
