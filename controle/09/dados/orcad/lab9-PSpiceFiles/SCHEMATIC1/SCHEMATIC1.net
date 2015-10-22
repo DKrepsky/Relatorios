@@ -1,0 +1,19 @@
+* source LAB9
+E_LAPLACE1         N06077 0 LAPLACE {V(N00633)} {(1)/(s*s)}
+V_V1         VCC 0 12Vdc
+R_R1         N00727 N00405  1k  
+X_U1A         0 N00405 VCC -VCC N00462 TL082
+R_R2         N00405 N00462  1k  
+V_V2         0 -VCC 12Vdc
+X_U1B         0 N00576 VCC -VCC N00633 TL082
+R_R3         N00462 N00576  1k  
+V_V3         N06749 0  
++PULSE 0 1 1u 1u 0 3 6
+R_R4         N00576 N00633  19.0435k  
+X_U2A         N04932 N04696 VCC -VCC N00727 TL082
+R_R5         N06077 N04696  100k  
+R_R6         N04696 N00727  100k  
+R_R7         N04932 N06749  100k  
+R_R8         0 N04932  100k  
+C_C1         N00727 N00405  62.5u  
+C_C2         N00405 N00462  147.93u  
