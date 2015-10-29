@@ -1,0 +1,31 @@
+\section{REVISÃO DA LITERATURA}
+
+\subsection{Sistemas Digitais}
+
+Atualmente, a maior parte dos sistemas de comunicação utilizam Modem digital. Porque este tem uma maior capacidade de canal,o desempenho de transmissão e recepção é melhor, obtendo assim, uma menor BER. E quando utilizamos sinais digitais conseguimos um sinal sem ruído adicionando um código de correção de erro. E ainda obtemos uma maior eficiência de banda.
+
+\subsection{Modulação PAM}
+
+A Modulação de amplitude de impulso ou PAM é a transmissão de dados através da variação de amplitude dos níveis de tensão ou potência  dos impulsos individuais numa sequência temporizada regular de impulsos elétricos ou eletromagnéticos. O número de possíveis amplitudes de impulso pode ser infinita (no caso de PAM analógico), mas, geralmente, é uma potência de dois, de modo que o sinal de saída resultante pode ser digitalizado. Em alguns sistemas de PAM, a amplitude de cada pulso é diretamente proporcional à amplitude de modulação do sinal instantâneo no tempo o impulso ocorre. Em outros sistemas PAM, a amplitude de cada pulso é inversamente proporcional à amplitude de modulação do sinal instantâneo no tempo o impulso ocorre. Em ainda outros sistemas, a intensidade de cada impulso depende alguma característica do sinal de modulação diferente da sua força, tal como a sua instantânea frequência ou fase .
+
+\begin{figure}[H]
+    \centering
+    \caption{Sinal PAM retangular.}
+    \includegraphics[scale=1]{Imagens/pam}
+    \label{fig:Osci1}
+\end{figure}
+
+Em canais AWGN a detecção coerente é ótima (min. BER) quando se utiliza matched filter ou filtro casado. O detector sincrono é ótimo para canal AWGN requer custo de implementação mais elevado que a versão não-coerente.
+
+
+A eficiência espectral do sinal PAM ou QAM com formatação dos pulsos retangulares é:
+
+\[
+    \eta_{BW}^{MPSK_QAM}  = \frac{R}{B_T} = \frac{\mathrm{l}}{2} \, \bigg [ \frac{bits/s}{Hz} \bigg ]
+\]
+
+Onde   é o número de pontos da constelação de sinais.
+
+Observe que a eficiência espectral aumenta à medida que o número de pontos na constelação cresce e o espectro do sinal em banda-base é reduzido (formatação de pulso)
+
+\newpage

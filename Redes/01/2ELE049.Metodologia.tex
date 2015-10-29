@@ -1,0 +1,111 @@
+\section{METODOLOGIA EXPERIMENTAL}
+
+
+\subsection{Materiais}
+
+\begin{itemize}
+\item Foi utilizado o simulador Simulink do Matlab para simular os seguintes experimentos.
+\end{itemize}
+
+
+\subsection{Métodos}
+Na primeira atividade, foi montado o circuito da figura abaixo com ajuda do roteiro que continha todos os parâmetros necessários para configurar os blocos:
+
+\begin{figure}[H]
+    \centering
+    \caption{Sistema PAM retangular com filtro.}
+    \includegraphics[scale=0.8]{Imagens/f1}
+    \label{f1}
+\end{figure}
+
+ 
+Os parâmetros de simulação foram feitos assim: start time 0; stop time 10.001; type: fixed-step; solver: ode3; fixed-step size 2e-5; period sample time constraint: unconstrained; tasking mode for period sample times: auto.
+
+Após isto, encontramos os dados obtidos em cada osciloscopio, simulado no circuito : transmit 1, transmit, transmit 2, LPF PAM e PAM.
+
+Deveriamos também verificar o atraso no sinal recebido em relação ao sinal transmitido.
+
+E para finalizar este exercicio, deveriamos plotar o gráfico BER X SNR, utilizando a função semilogy e preencher uma tabela. * Obs. Considerando a potência do sinal de 25W. 
+
+\begin{center}
+    \begin{table}[H]
+        \caption{Taxa de erro de bit.}
+        \centering\begin{tabular}{c|c|c}
+            SNR[dB] & AWGN $\sigma^2$ & BER \\ \hline
+            0.96  & 20 &  \\
+            & 50 & 0,0001 \\
+            & 100 &  \\
+            & 150 &   \\
+            & 200 &   \\
+            & 250 &  \\
+            & 270 &  \\
+            & 300 &  \\
+            & 500 &  \\ \hline
+        \end{tabular}
+    \end{table}
+\end{center}
+
+Na segunda atividade, deveriamos simular o circuito PAM sinc que estende-se além de um tempo de bit, mas evita a interferência intersimbólica (ISI) pelo fato de ter valores zeros em $\pm nTb$ (n é um inteiro e $n \neq 0$).
+
+E todos os parâmetros foram configurados de acordo com o roteiro.
+
+\begin{figure}[H]
+    \centering
+    \caption{PAM com sync.}
+    \includegraphics[scale=1]{Imagens/f2}
+    \label{f2}
+\end{figure}
+
+Depois de simulado o circuito deveriamos obter os gráficos obtidos nos osciloscópios para uma taxa de bit de   e  . 
+
+Em seguida deveriamos obter como terceira atividade a densidade espectral de potência do      PAM sinc e para isto, os blocos do circuito foram reconfigurado de acordo com o roteiro e a simulação foi feita utilizando os seguintes paramêtros.
+
+start time 0; stop time 10; type: fixed-step; solver: ode3; fixed-step size 2e-5; period sample time constraint: unconstrained; tasking mode for period sample times: auto.
+
+Por conseguinte, deveriamos gerar o gráfico dos espectros de potência  do sinal,observando os pontos de zero, que se encontram no eixo x.
+
+
+E como ultima atividade do laboratório, tivemos que simular um circuito para verificar o desempenho do PAM sinc em um receptor simples AWGN.
+
+\begin{figure}[H]
+    \centering
+    \caption{Sistema PAM sync.}
+    \includegraphics[scale=1]{Imagens/f3}
+    \label{f3}
+\end{figure}
+
+Os parâmetros de simulação foram os seguintes:
+
+Ao final da simulação deveriamos obter os gráficos gerados pelos osciloscópios presentes no circuito.
+
+Também tinhamos que obter o atraso no sinal recebido com relação ao sinal enviado e ainda plotar o gráfico BER x SNR e preencher a tabela abaixo:
+
+Sabendo que a potência do sinal é de aproximadamente 24,3 W era necessário calcular a potência do sinal.
+
+\begin{figure}[H]
+    \centering
+    \caption{Calculo do valor RMS.}
+    \includegraphics[scale=0.8]{Imagens/f4}
+    \label{f4}
+\end{figure}
+
+
+\begin{center}
+    \begin{table}[H]
+        \caption{Taxa de erro de bit.}
+        \centering\begin{tabular}{c|c|c}
+            SNR[dB] & AWGN $\sigma^2$ & BER \\ \hline
+             0.85  & 20 &  \\
+              & 50 & 0,0001 \\
+              & 100 &  \\
+              & 150 &   \\
+             & 200 &   \\
+             & 250 &  \\
+             & 270 &  \\
+             & 300 &  \\
+             & 500 &  \\ \hline
+        \end{tabular}
+    \end{table}
+\end{center}
+
+\newpage
