@@ -28,6 +28,8 @@
 \usepackage{amssymb}
 \usepackage{bm}
 \usepackage{commath}
+\usepackage{steinmetz}
+\usepackage{mathrsfs}
 
 % Figuras
 \usepackage{graphicx}
@@ -55,9 +57,35 @@
 	\newpage}
 
 % Lista de códigos
-\usepackage{listings}                   % para formatar código-fonte
-\lstset{numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=5pt, basicstyle=\scriptsize , frame=trbl}
+\usepackage{caption}
+\usepackage{listings}                  
+\usepackage{color}
 
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+    backgroundcolor=\color{white},
+    basicstyle=\footnotesize,
+    breaklines=true,                 % sets automatic line breaking
+    captionpos=t,                    % sets the caption-position to bottom
+    commentstyle=\color{mygreen},    % comment style
+    extendedchars=true,
+    frame=single,	                 % adds a frame around the code
+    keepspaces=true,                 % useful for keeping indentation of code
+    keywordstyle=\color{blue},       % keyword style
+    language=matlab,                 % the language of the code
+    otherkeywords={...},           	 % if you want to add more keywords
+    numbers=left,                    % where to put the line-numbers
+    numbersep=5pt,                   % how far the numbers are from the code
+    %numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+    rulecolor=\color{black},
+    stepnumber=1,                    % the step between two line-numbers.
+    stringstyle=\color{mymauve},     % string literal style
+    tabsize=2,	                    % sets default tabsize to 2 spaces
+    title=\lstname                   % show the filename of files included
+}
 % Enumerate
 \usepackage{enumitem}
 
@@ -69,15 +97,13 @@
 
 \begin{document}
 
-\input{01_capa.tex}
-\input{02_resumo.tex}
-\input{03_sumario.tex}
-\input{04_introducao.tex}
-\input{05_teoria.tex}
-\input{06_metodologia.tex}
-\input{07_resultados.tex}
-\input{08_conclusao.tex}
-\input{09_referencias.tex}
-
-
+\input{capa.tex}
+\input{resumo.tex}
+\input{sumario.tex}
+\input{introducao.tex}
+\input{teoria.tex}
+\input{metodologia.tex}
+\input{resultados.tex}
+\input{conclusao.tex}
+\input{referencias.tex}
 \end{document}
