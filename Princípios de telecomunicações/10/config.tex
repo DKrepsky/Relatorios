@@ -1,0 +1,82 @@
+\documentclass[12pt,a4paper]{article}%
+%Options -- Point size:  10pt (default), 11pt, 12pt
+%        -- Paper size:  letterpaper (default), a4paper, a5paper, b5paper
+%                        legalpaper, executivepaper
+%        -- Orientation  (portrait is the default)
+%                        landscape
+%        -- Print size:  oneside (default), twoside
+%        -- Quality      final(default), draft
+%        -- Title page   notitlepage, titlepage(default)
+%        -- Columns      onecolumn(default), twocolumn
+%        -- Equation numbering (equation numbers on the right is the default)
+%                        leqno
+%        -- Displayed equations (centered is the default)
+%                        fleqn (equations start at the same distance from the right side)
+%        -- Open bibliography style (closed is the default)
+%                        openbib
+% For instance the command
+%           \documentclass[a4paper,12pt,leqno]{article}
+% ensures that the paper size is a4, the fonts are typeset at the size 12p
+% and the equation numbers are on the left side
+
+% Tabelas
+\usepackage{multirow}
+
+% Símbolos Matemáticos
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{commath}
+\usepackage{mathrsfs,amsmath}
+
+% Figuras
+\usepackage{graphicx}
+
+%\usepackage{wrapfig}
+\usepackage{float}
+
+% Língua e acentos
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Espaçamento
+\usepackage[top=3cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{indentfirst}
+
+\usepackage{afterpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
+% Lista de códigos
+\usepackage{listings}                   % para formatar código-fonte
+\lstset{numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=5pt, basicstyle=\scriptsize , frame=trbl}
+
+%\usepackage{enumerate}
+\usepackage{enumitem}
+
+% Latexdraw
+%\usepackage[usenames,dvipsnames]{pstricks}
+%\usepackage{epsfig}
+%\usepackage{pst-grad} % For gradients
+%\usepackage{pst-plot} % For axes
+
+%------------------------------------------------------------------------------
+
+\begin{document}
+
+\input{capa.tex}
+\input{resumo.tex}
+\input{sumario.tex}
+\input{introducao.tex}
+\input{teoria.tex}
+\input{metodologia.tex}
+\input{resultados.tex}
+\input{conclusao.tex}
+\input{referencias.tex}
+
+\end{document}
