@@ -1,0 +1,8 @@
+\newpage
+\section{Discussão e Conclusão}
+Neste experimento foi possível observar o funcionamento de um conversor Buck com controlador de malha aberta, utilizando o CI SG3524, bem como o funcionamento da proteção contra aumento de temperatura.
+Foi observado que é possível ajustar a tensão de saída do conversor através do circuito de controle (com o uso de um potenciômetro), bem como a frequência de chaveamento. Nota-se que, ao alterar o valor de $K_c$ de 0,5 para 1, a frequência de saída dobra.
+
+Também foi analisado o comportamento do sistema de proteção do CI. Observou-se que, com o auxilio de um AmpOp e um termistor NTC, é possível implementar um circuito de proteção contra o aumento excessivo de temperatura. Porém, tal circuito faz com que haja um pico de corrente no conversor quando a temperatura abaixa, sendo necessário modificações para evitar as altas correntes produzidas.
+
+O método de controle utilizado (malha aberta) é bastante deficiente no controle efetivo da tensão, sendo necessário o ajuste manual da razão cíclica para compensar as variações no sistema. Um método mais robusto é utilizar o controle por malha fechada, onde a tensão utilizada na comparação com a tensão de erro é provinda da saída do conversor, e o ajuste é feito de forma automatica.
