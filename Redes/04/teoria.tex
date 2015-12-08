@@ -22,7 +22,7 @@ O modulador ASK é de fácil implementação, pois consiste em um multiplicador,
     \label{fig:modASK}
 \end{figure}
 
-Para o M-ASK, é necessário codificar os dados de entrada antes de aplicar a modulação, fazendo com que cada conjunto de bits se torne um nível de tensão distinto.
+Para o M-ASK, é necessário codificar os dados de entrada antes de aplicar a modulação (vide figura \ref{fig:mask} (b)), fazendo com que cada conjunto de bits se torne um nível de tensão distinto.
  
 \subsection{Modulação FSK}
 
@@ -66,34 +66,25 @@ Esse fato fica evidente ao analisarmos a figura \ref{fig:bw}, a qual mostra o es
     \label{fig:bw}
 \end{figure}
 
-\subsubsection{Circuito modulador FSK}
-
-A figura \ref{fig:modulador} representa o diagrama de blocos de um modulador FSK, onde um sinal de mensagem entra em \textit{Digital Signal} e, através do VCO (\textit{Voltage Controled Oscillator}), modifica a frequência da onda de saída. A frequência da portadora, $f_c$, é dada por um circuito que pode ser feito com um resistor e um capacitor, os quais determinam o período de oscilação da frequência central.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{modulador}
-    \caption{Modulador FSK com VCO.}
-    \label{fig:modulador}
-\end{figure}
-\subsubsection{Circuito demodulador}
-
-O detector utilizado é um detector coerente, ou seja, possui as informações de fase e frequência da portadora. O método escolhido para a demodulação é através de um PLL, o qual rastreia a frequência do sinal recebido de forma a ser aplicada no detector coerente.
-
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{coerente}
-    \caption{Detector coerente com PLL.}
-    \label{fig:detector}
-\end{figure}
-
-O funcionamento do circuito da figura \ref{fig:circuito} é melhor entendido se analisarmos o diagrama de blocos da figura \ref{fig:detector}. Nesta imagem é possível ver que o trabalho do CI 565 consiste em extrair as informações de fase e frequência do sinal transmito, de modo a produzir, com um VCO, um sinal semelhante, o qual é utilizado como referência para aplicação no detector coerente.
-
-Desta forma é possível obter na saída a representação binaria do dado transmitido.
-
 \subsubsection{FSK M-ário}
-Para o FSK M-ário, a diferença é que outros símbolos são representados por mais frequências.
+Para o FSK M-ário, a diferença é que cada símbolos é representado por uma frequência diferente. A largura de banda mínima torna-se:
+
+\[
+BW = M\cdot \Delta f +2B.
+\]
 
 \subsection{Modulação PSK}
+
+O A técnica de modulação conhecida por PSK (Phase Shift- Keying), é o processo pelo qual se altera a fase da onda portadora em função do sinal digital a ser transmitido. Para este processo são usados pulsos bipolares de altura $A_1 = 2$ e $A_0 = -2$ no sinal senoidal da onda portadora em lugar de dois pulsos de altura 0 e A.
+
+Quando ocorrer uma transição de nível lógico do sinal digital a ser transmitido (sinal modulante), haverá uma mudança de 180 graus na fase da onda portadora com relação ao ângulo anterior. A transição observada pode ser tanto de nível lógico "0" para "1" como de nível lógico "1" para "0", como pode ser observado na figura \ref{fig:mpsk}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{mpsk}
+    \caption{Modulação PSK.}
+    \label{fig:mpsk}
+\end{figure}
+
+Para este tipo de modulação deve se usar a detecção síncrona, já que esta tem como base o conhecimento preciso a respeito da fase da onda portadora recebida, bem como da sua frequência.
+Esta técnica de modulação devido ao fato mencionado, envolve circuitos de recepção (demodulação) mais sofisticados; em compensação oferece melhor desempenho que as técnicas ASK e FSK.
