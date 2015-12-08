@@ -1,0 +1,99 @@
+\newpage
+\section{Revisão da Teoria}
+
+\subsection{Modulação ASK}
+
+A modulação ASK ("\emph{Amplitude Shift Keying}") é uma maneira bem simples de modulação digital. Essa técnica consiste em transmitir dados através da variação da amplitude da tensão de um sinal, ou seja, a informação a ser transmitida é inserida na amplitude de uma sequência de pulsos elétricos, como mostra a figura \ref{fig:mask}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{mask}
+    \caption{Modulação 4-ASK de um sinal de dados.}
+    \label{fig:mask}
+\end{figure}
+
+\subsubsection{Modulador ASK}
+O modulador ASK é de fácil implementação, pois consiste em um multiplicador, o qual multiplica a portadora, de frequência $f_c$, pelo sinal digital, como pode ser visto na figura \ref{fig:modASK}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{modASK}
+    \caption{Modulador ASK.}
+    \label{fig:modASK}
+\end{figure}
+
+Para o M-ASK, é necessário codificar os dados de entrada antes de aplicar a modulação, fazendo com que cada conjunto de bits se torne um nível de tensão distinto.
+ 
+\subsection{Modulação FSK}
+
+A modulação FSK ("\emph{Frequency Shift Keying}") é uma técnica de modulação que consiste em variar a frequência da portadora em função do sinal modulante, no caso o sinal digital a ser transmitido.
+Pode-se considerar que este tipo de modulação é equivalente a modulação FM analógica.
+
+A amplitude da onda portadora modulada é mantida constante durante todo o processo de modulação, quando o sinal digital apresenta nível lógico "1" a frequência da portadora é alterada para posteriormente ser detectada no processo de demodulação.
+A frequência resultante transmitida será a frequência da onda portadora $f_c$ diminuida de uma frequência de desvio $f_d$.
+Ou seja
+\begin{equation}
+f_r = f_c - f_d
+\end{equation}
+
+Para a ocorrência de um nível lógico "0", a frequência resultante será a frequência da portadora mais a frequência de desvio.
+\begin{equation}
+f_r = f_c + f_d
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.9]{fsk.png}
+    \caption{Modulação FSK}
+    \label{fig:mdfsk}
+\end{figure}
+
+A Figura \ref{fig:mdfsk} mostra um sinal modulante, uma portadora $f_c=5kHz$ com $f_d = 3kHz$.
+É possível observar um sinal em $8kHz$ quando o sinal modulante é "1" e em $2kHz$ quando o sinal modulante é "0", ou seja, o esquema FSK se utiliza da frequência como um meio de transportar a informação, sendo que, para cada frequência $f_i$, é mapeado um simbolo $s_i$.
+
+A largura de banda utilizada na transmissão de sinais modulados em FSK é:
+\[
+BW = 2\cdot \Delta f +2B.
+\]
+
+Onde $BW$ é a largura de banda ocupada, $\Delta f$ é a variação de frequência para representar os bits e $B$ é a banda ocupada desde  $f_c + \Delta f$ até o primeiro nódulo da onda \textit{sinc}, a qual representa o espectro de um nível do sinal. 
+Esse fato fica evidente ao analisarmos a figura \ref{fig:bw}, a qual mostra o espectro de um sinal FSK.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.9]{bw}
+    \caption{Espectro de uma sinal modulado com FSK.}
+    \label{fig:bw}
+\end{figure}
+
+\subsubsection{Circuito modulador FSK}
+
+A figura \ref{fig:modulador} representa o diagrama de blocos de um modulador FSK, onde um sinal de mensagem entra em \textit{Digital Signal} e, através do VCO (\textit{Voltage Controled Oscillator}), modifica a frequência da onda de saída. A frequência da portadora, $f_c$, é dada por um circuito que pode ser feito com um resistor e um capacitor, os quais determinam o período de oscilação da frequência central.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{modulador}
+    \caption{Modulador FSK com VCO.}
+    \label{fig:modulador}
+\end{figure}
+\subsubsection{Circuito demodulador}
+
+O detector utilizado é um detector coerente, ou seja, possui as informações de fase e frequência da portadora. O método escolhido para a demodulação é através de um PLL, o qual rastreia a frequência do sinal recebido de forma a ser aplicada no detector coerente.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{coerente}
+    \caption{Detector coerente com PLL.}
+    \label{fig:detector}
+\end{figure}
+
+O funcionamento do circuito da figura \ref{fig:circuito} é melhor entendido se analisarmos o diagrama de blocos da figura \ref{fig:detector}. Nesta imagem é possível ver que o trabalho do CI 565 consiste em extrair as informações de fase e frequência do sinal transmito, de modo a produzir, com um VCO, um sinal semelhante, o qual é utilizado como referência para aplicação no detector coerente.
+
+Desta forma é possível obter na saída a representação binaria do dado transmitido.
+
+\subsubsection{FSK M-ário}
+Para o FSK M-ário, a diferença é que outros símbolos são representados por mais frequências.
+
+\subsection{Modulação PSK}
