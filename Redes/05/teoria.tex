@@ -1,90 +1,53 @@
-%\newpage
-%\section{Revisão da Teoria}
-%
-%\subsection{Modulação ASK}
-%
-%A modulação ASK ("\emph{Amplitude Shift Keying}") é uma maneira bem simples de modulação digital. Essa técnica consiste em transmitir dados através da variação da amplitude da tensão de um sinal, ou seja, a informação a ser transmitida é inserida na amplitude de uma sequência de pulsos elétricos, como mostra a figura \ref{fig:mask}. 
-%
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[scale=0.7]{mask}
-%    \caption{Modulação 4-ASK de um sinal de dados.}
-%    \label{fig:mask}
-%\end{figure}
-%
-%\subsubsection{Modulador ASK}
-%O modulador ASK é de fácil implementação, pois consiste em um multiplicador, o qual multiplica a portadora, de frequência $f_c$, pelo sinal digital, como pode ser visto na figura \ref{fig:modASK}.
-%
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[scale=0.7]{modASK}
-%    \caption{Modulador ASK.}
-%    \label{fig:modASK}
-%\end{figure}
-%
-%Para o M-ASK, é necessário codificar os dados de entrada antes de aplicar a modulação (vide figura \ref{fig:mask} (b)), fazendo com que cada conjunto de bits se torne um nível de tensão distinto.
-% 
-%\subsection{Modulação FSK}
-%
-%A modulação FSK ("\emph{Frequency Shift Keying}") é uma técnica de modulação que consiste em variar a frequência da portadora em função do sinal modulante, no caso o sinal digital a ser transmitido.
-%Pode-se considerar que este tipo de modulação é equivalente a modulação FM analógica.
-%
-%A amplitude da onda portadora modulada é mantida constante durante todo o processo de modulação, quando o sinal digital apresenta nível lógico "1" a frequência da portadora é alterada para posteriormente ser detectada no processo de demodulação.
-%A frequência resultante transmitida será a frequência da onda portadora $f_c$ diminuida de uma frequência de desvio $f_d$.
-%Ou seja
-%\begin{equation}
-%f_r = f_c - f_d
-%\end{equation}
-%
-%Para a ocorrência de um nível lógico "0", a frequência resultante será a frequência da portadora mais a frequência de desvio.
-%\begin{equation}
-%f_r = f_c + f_d
-%\end{equation}
-%
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[scale=0.9]{fsk.png}
-%    \caption{Modulação FSK}
-%    \label{fig:mdfsk}
-%\end{figure}
-%
-%A Figura \ref{fig:mdfsk} mostra um sinal modulante, uma portadora $f_c=5kHz$ com $f_d = 3kHz$.
-%É possível observar um sinal em $8kHz$ quando o sinal modulante é "1" e em $2kHz$ quando o sinal modulante é "0", ou seja, o esquema FSK se utiliza da frequência como um meio de transportar a informação, sendo que, para cada frequência $f_i$, é mapeado um simbolo $s_i$.
-%
-%A largura de banda utilizada na transmissão de sinais modulados em FSK é:
-%\[
-%BW = 2\cdot \Delta f +2B.
-%\]
-%
-%Onde $BW$ é a largura de banda ocupada, $\Delta f$ é a variação de frequência para representar os bits e $B$ é a banda ocupada desde  $f_c + \Delta f$ até o primeiro nódulo da onda \textit{sinc}, a qual representa o espectro de um nível do sinal. 
-%Esse fato fica evidente ao analisarmos a figura \ref{fig:bw}, a qual mostra o espectro de um sinal FSK.
-%
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[scale=0.9]{bw}
-%    \caption{Espectro de uma sinal modulado com FSK.}
-%    \label{fig:bw}
-%\end{figure}
-%
-%\subsubsection{FSK M-ário}
-%Para o FSK M-ário, a diferença é que cada símbolos é representado por uma frequência diferente. A largura de banda mínima torna-se:
-%
-%\[
-%BW = M\cdot \Delta f +2B.
-%\]
-%
-%\subsection{Modulação PSK}
-%
-%O A técnica de modulação conhecida por PSK (Phase Shift- Keying), é o processo pelo qual se altera a fase da onda portadora em função do sinal digital a ser transmitido. Para este processo são usados pulsos bipolares de altura $A_1 = 2$ e $A_0 = -2$ no sinal senoidal da onda portadora em lugar de dois pulsos de altura 0 e A.
-%
-%Quando ocorrer uma transição de nível lógico do sinal digital a ser transmitido (sinal modulante), haverá uma mudança de 180 graus na fase da onda portadora com relação ao ângulo anterior. A transição observada pode ser tanto de nível lógico "0" para "1" como de nível lógico "1" para "0", como pode ser observado na figura \ref{fig:mpsk}. 
-%
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[scale=0.5]{mpsk}
-%    \caption{Modulação PSK.}
-%    \label{fig:mpsk}
-%\end{figure}
-%
-%Para este tipo de modulação deve se usar a detecção síncrona, já que esta tem como base o conhecimento preciso a respeito da fase da onda portadora recebida, bem como da sua frequência.
-%Esta técnica de modulação devido ao fato mencionado, envolve circuitos de recepção (demodulação) mais sofisticados; em compensação oferece melhor desempenho que as técnicas ASK e FSK.
+\newpage
+\section{Revisão da Teoria}
+
+\subsection{Modulação Delta}
+
+A modulação Delta usa L=2, ou seja, apenas 1 bit faz todo a codificação do sinal.
+Essa codificação é extremamente eficiente pois não necessita de bits de sincronismo, ou de framing para a transmissão, permitindo uma comunicação a uma taxa mais baixa ainda. O sinal Delta modulado, sendo uma série de “1” e “0”, é uma sequência de impulsos espaçados de Ts. 
+Em DM usa-se um estimador de primeira ordem, que é, apenas um delay de TS. Para demodular o sinal, necessita-se de um circuito integrador, sendo que o estimador é apenas um delay.
+A função do receptor é a de acumular o sinal recebido. O somador e a linha de delay mostradas na figura acima podem ser substituídos por um simples circuito
+integrador.
+O transmissor também é igual ao da figura \ref{fig:modulador}, porém com um delay servindo como estimador. O circuito do transmissor também pode ser simplificado com o uso de simples integradores RC.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{modulador}
+    \caption{Modulador delta.}
+    \label{fig:modulador}
+\end{figure}
+
+Em PCM, o sinal analógico é quantizado em L níveis e essa informação é transmitida por n pulsos por amostra (n = Log2L). A diferença é que em DM o sinal
+modulado não carrega informação sobre o sinal m(t) propriamente dito, mas sobre a sua derivada. Por isso dá-se este nome a essa modulação, delta modulation.
+A grande vantagem do DM é que a modulação é feita em apenas 1 bit por amostra. Enquanto em PCM, normalmente há a necessidade de mais bits para codificar a amostra. A figura \ref{fig:saidadelta} mostra um exemplo da modulação de um sinal senoidal.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{saidadelta}
+    \caption{Sinal senoidal com modulação delta.}
+    \label{fig:saidadelta}
+\end{figure}
+
+\section{Diagrama de olho}
+
+A técnica de medida conhecida como ‘diagrama de olho’, feita no domínio do tempo, é
+uma ferramenta importante para se avaliar o desempenho de um sistema óptico digital, pois permite uma visualização da distorção na forma do sinal transmitido. Para se entender como o padrão do ‘olho’ é formado mostramos oito combinações de sinal NRZ com comprimento de 3-bit que, quando superpostas simultaneamente, formam um padrão de olho.
+
+Algumas informações que podem ser obtidas com o diagrama do olho são (fonte: Mônica de Lacerda Rocha, Diagrama do olho. Projeto e avaliação Sistêmicos):
+
+\begin{itemize}
+    \item  A largura da abertura do olho (no eixo horizontal) define o intervalo de tempo sobre o qual o sinal recebido pode ser amostrado sem erro devido à interferência intersimbólica. O melhor momento de amostragem é o que corresponde ao de maior abertura vertical do olho.
+    \item A altura da abertura do olho é reduzida quando ocorre distorção na amplitude do sinal. A distorção máxima é dada pela distância vertical entre o topo da abertura do olho e o
+    máximo nível do sinal. Quanto mais fechado o olho se tornar, mais difícil é a detecção do sinal.
+
+    \item A taxa na qual o olho se fecha, quando o instante de amostragem varia (i.e., proporcional à inclinação dos lados do diagrama de olho) determina a sensibilidade do sistema a erros de temporização. A probabilidade de ocorrência deste tipo de erro aumenta à medida que a inclinação torna-se mais acentuada.
+    \item Jitter temporal (também conhecido como eixo de jitter ou 'distorção de fase') aparece devido ao ruído no receptor e à distorção do pulso na fibra. Se o sinal é amostrado no meio do intervalo de tempo de amostragem (i.e., eqüidistante entre os tempos de cruzamento do sinal com o nível de limiar), a distorção temporal, $\Delta T$, no nível de limiar indica a quantidade de jitter presente no sinal.
+\end{itemize}
+
+A figura \ref{fig:eyediagram} mostra o formato do diagrama do olho.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{eyediagram}
+    \caption{Diagrama do olho.}
+    \label{fig:eyediagram}
+\end{figure}

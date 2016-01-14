@@ -1,53 +1,55 @@
 \newpage
 \section{Metodologia Experimental}
 
-Este experimento foi dividido em 2 circuitos.
+Este experimento foi dividido em 4 circuitos, o qual foram projetados utilizando a tabela de coeficientes normalizados provida pelo professor e, em seguida, foram simulados no programa computacional Cadence Orcad. Abaixo segue a descrição de cada circuito.
 
+\subsection{FPB}
+O primeiro filtro projetado foi um filtro passa-baixas de terceira ordem, com resposta do tipo Butterworth utilizando apenas 1 indutor. A frequência de corte dada é de 4,8 kHz, o resistor da fonte $R_s = 50\ \Omega$ e a carga $R_l = 470\ \Omega$.
 
-\subsection{Circuito 1}
-Para o circuito mostrado na figura \ref{f_cir1}:
+Foram analisadas a frequência de corte, atenuação fora da faixa de passagem, atenuação na faixa de passagem e a defasagem ao longo de toda a faixa de frequências.
 
-\begin{itemize}
-\item calcular o ganho na banda de passagem;
-\item calcular a frequência de corte;
-\item simular o circuito com o software Orcad;
-\item gerar o gráfico da resposta em frequência do circuito;
-\item determinar o ganho na banda de passagem simulado;
-\item determinar a frequência de corte do circuito simulado;
-\item determinar o tipo de resposta (Butterworth, Chebyshev, Bessel, etc.);
-\item determinar a ordem do filtro e a atenuação em DB/década;
-\item comparar os resultados teóricos com o simulado.
-\end{itemize}
-
-\begin{figure}[H]
+A figura \ref{fFPB} mostra o circuito utilizado.\begin{figure}[H]
 \centering
-\includegraphics[scale=0.3]{Imagens/cir1.jpg}
-\caption{Filtro ativo passa-baixas.}
-\label{f_cir1}
+
+\includegraphics[scale=0.8]{Imagens/fpb.jpg}
+\label{fFPB}
+\caption{Filtro desnormalizado passa-baixas.}
 \end{figure}
 
 
 
-\subsection{Circuito 2}
-Para o circuito mostrado na figura \ref{f_cir2}:
+\subsection{FPA}
+O segundo filtro projetado foi um filtro passa-altas de terceira ordem, com resposta do tipo Butterworth utilizando apenas 1 indutor. A frequência de corte dada é de 4,2 kHz, o resistor da fonte $R_s = 470 \Omega$ e a carga $R_l = 50 \Omega$.
 
-\begin{itemize}
-\item calcular a frequência de corte para o primeiro estágio do filtro;
-\item simular o primeiro estágio e comparar a resposta em frequência obtida com o resultado teórico;
-\item calcular a frequência de corte para o segundo estágio do filtro;
-\item simular o segundo estágio e comparar a resposta em frequência obtida com o resultado teórico;
-\item simular o circuito em cascata com o inversor no software Orcad e obter a resposta em frequência;
-\item determinar o ganho na banda de passagem simulado;
-\item determinar a frequência de corte do circuito;
-\item determinar o tipo de resposta (Butterworth, Chebyshev, Bessel, etc.);
-\item determinar a ordem do filtro e a atenuação em DB/década;
-\item comparar os resultados teóricos com o simulado.
-\item inserir uma forma de onda quadrada de frequência fundamental igual a 90\% da frequência de corte encontrada e analisar a forma de onda na saída.
-\end{itemize}
+Foram analisadas a frequência de corte, atenuação fora da faixa de passagem, atenuação na faixa de passagem e a defasagem ao longo de toda a faixa de frequências.
+
+A figura \ref{fFPA} mostra o circuito utilizado.\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{Imagens/fpa.jpg}
+\label{fFPA}
+\caption{Filtro desnormalizado passa-altas.}
+\end{figure}
+
+\subsection{FPF em cascata}
+No terceiro circuito o filtro FPB e o FPA desenvolvidos anteriormente foram conectados em cascata de forma a formar um filtro passa-faixa, onde foi também analisado a largura de banda passante do filtro.
+
+Na figura \ref{fFPFC} é apresentado o circuito resultante da conexão dos filtro FPA e FPB, na topologia cascata.
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.2]{Imagens/cir2.jpg}
-\caption{Filtro ativo passa-baixas em cascata com circuito de polarização.}
-\label{f_cir2}
+\includegraphics[scale=0.5]{Imagens/fpf1.jpg}
+\label{fFPFC}
+\caption{Filtro passa-faixa em cascata.}
+\end{figure}
+
+\subsection{FPF}
+O quarto e ultimo filtro foi projetado para ter uma resposta em frequência semelhante a do filtro FPF em cascata. O objetivo foi de analisar as diferenças em se utilizar um filtro FPF e um filtro FPB em conjunto com um filtro FPA.
+
+A figura \ref{fFPF} representa o filtro passa-faixa projetado.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{Imagens/fpf2.jpg}
+\label{fFPF}
+\caption{Filtro passa-faixa.}
 \end{figure}

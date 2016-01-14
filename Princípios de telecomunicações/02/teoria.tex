@@ -1,45 +1,29 @@
 \newpage
 \section{Teoria}
-\subsection{Filtros ativos}
-Filtros ativos utilizam elementos amplificadores (transistores, amplificadores operacionais, etc.) em conjunto com resistores e capacitores para apresentar as características de filtragem desejadas.
-Este tipo de filtro pode apresentar uma impedância de entrada alta, uma impedância de saída baixa e um ganho muito grande, tornando-os ideais para aplicações onde o sinal possui baixa potência. Porém sua principal característica é que não à necessidade de utilizar indutores para filtros de ordem maior, reduzindo o custo, tamanho e a falta de precisão características dos indutores.
-O desempenho dos filtros ativos em altas frequências é limitado pelo ganho do circuito, quanto maior o ganho, menor a largura de banda disponível.
-Filtros ativos também geram ruídos, devido ao elemento de amplificação, porém esses efeitos podem ser minimizados com o uso de amplificadores 	\textit{low noise} e técnicas de design apropriadas.
+\subsection{Filtros Passivos}
+Filtros passivos são circuitos que removem uma porção indesejada do sinal sem inserir energia no mesmo. São compostos por resistores, capacitores e indutores que utilizam as propriedades de armazenamento de energia (em forma de campo elétrico nos capacitores e campo magnético nos indutores) para alterar a amplitude do sinal de acordo com a frequência. Os filtros ativos diferem dos passivos pois possuem eletrônica de modo a amplificar (aumentar a energia) do sinal, porém, para frequências muito altas o uso de filtros ativos se torna inviável, dado a grande quantidade de capacitância parasita nos dispositivos semi-condutores.
 
-\subsection{Topologia Sallen-Key}
-A figura \ref{f_skey} mostra uma das topologias mais utilizadas de filtros ativos. Esse é um filtro FPB Sallen-Key de segunda ordem, o qual pode ser utilizado com cascata para a obtenção de filtros de ordem maior.
-Neste filtro, os dois resistores e os dois capacitores conectados a entrada não inversora definem a frequência de corte do mesmo e o fator Q. Os resistores da entrada inversora definem o ganho de tensão e também o fator Q. Assim, para um determinado fator Q, o ganho e a frequência não podem ser modificados de forma independente.
+Os filtros passivos são classificados de acordo com a faixa de frequências a qual o filtro atenua, sendo elas:
+\begin{itemize}
+\item \textbf{Passa-Baixas (FPB)} o qual permite a passagem das frequências abaixo de $f_c$ (frequência de corte);
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.5]{Imagens/skey.jpg}
-\label{f_skey}
-\caption{Filtro ativo passa-baixas com topologia Sallen-Key.}
-\end{figure}
+\item \textbf{Passa-Altas (FPA)} o qual permite a passagem das frequências acima de $f_c$;
 
-\subsection{Ganho, frequência de corte e fator Q para FPB Sallen-Key}
-O ganho é dado pelo divisor resistivo composto pelos resistores R3 e R4. A equação para o calculo do ganho é dada na eq. \ref{e_ganho}.
+\item \textbf{Passa-Faixa (FPF)} que atenua frequências abaixo de $f_1$ e frequências acima de $f_2$;
 
-\begin{equation}
-G = \frac{R3+R4}{R3} \quad [Volt/Volt].
-\label{e_ganho}
-\end{equation}
+\item \textbf{Rejeita-Faixa (FRF)} que permite a passagem de frequencias entre $f_1$ e $f_2$.
 
-A frequência de corte é dada pela equação \ref{e_fc}.
+\end{itemize}
 
-\begin{equation}
-f_c = \frac{1}{2\pi\sqrt{R1R2C1C2}} \quad [Hz]. 
-\label{e_fc}
-\end{equation}
+Uma segunda classificação para os filtros é relacionada ao \textit{ripple} e a defasagem da resposta em frequência. Os tipos mais comuns empregados na prática são:
 
-E o fator Q pela equação \ref{e_Q}.
+\begin{itemize}
+\item \textbf{Butterworth};
+\item \textbf{Chebyshev (tipo I ou II)};
+\item \textbf{Bessel}.
+\end{itemize}
 
-\begin{equation}
-Q = \frac{\sqrt{R1R2C1C2}}{R1C1 + R2C1 + R1C2(1-\frac{R3+R4}{R3})}
-\label{e_Q}
-\end{equation}
-
-\subsection{Largura de banda dos filtros ativos}
+\subsection{Frequência de Corte e Largura de Banda}
 A frequência de corte ($f_c$ é a frequência para qual o filtro apresentará uma atenuação de 3dB e é o parâmetro fundamental para o projeto de filtros.
-Outro parâmetro importante para os filtros do tipo passa-faixa e rejeita-faixa é a largura da banda de passagem, a qual é composta por uma frequência de corte inferior (denominada $f_1$) e uma superior ($f_2$). Para os filtros ativos, a largura de banda do sinal deve ser menor que a largura de banda do componente amplificador, a um ganho constante, para evitar a distorção do sinal.
+Outro parâmetro importante para os filtros do tipo passa-faixa e rejeita-faixa é a largura da banda de passagem, a qual é composta por uma frequência de corte inferior (denominada $f_1$) e uma superior ($f_2$).
 
