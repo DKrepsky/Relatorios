@@ -1,0 +1,122 @@
+\newpage
+\section{Metodologia Experimental}
+
+    \subsection{Materiais}
+        O material utilizado para realização do experimento foi:
+
+        \begin{itemize}
+            \item 1 Módulo \textit{Boost};
+            \item 1 Módulo \textit{Flyback};
+            \item 1 CI 3525;
+            \item 1 Amplificador operacional;
+            \item 1 capacitor de 100uF;
+            \item 1 capacitor de 220uF;
+            \item 1 capacitor de 470nF;
+            \item 1 capacitor de 1nF;
+            \item 1 resistor de 22k$\Omega$;
+            \item 2 resistores de 10k$\Omega$;
+            \item 1 resistor de 2k2$\Omega$;
+            \item 1 resistor de 1k$\Omega$;
+            \item 1 resistor de 1M$\Omega$;
+            \item 1 reostato de 50$\Omega$;
+            \item 1 acoplador óptico TIL 111;
+            \item 1 Gerador de função;
+            \item 1 Osciloscópio de 2 canais;
+            \item multímetros.
+        \end{itemize}
+
+        Para execução do experimento, faz-se necessário executar os passos abaixo, de acordo com o roteiro disponibilizado em sala de aula \cite{Roteiro}.
+        
+        \begin{enumerate}
+          \item Montar o circuito da figura 1 (do roteiro em \cite{Roteiro}) e verificar o funcionamento em malha fechada (Vsaída máximo de 40V). O que observou na variação da tensão de saída com relação à entrada? Explique.
+          
+          \item Após verificar o comportamento do item 1, preencha a tabela \ref{tab:boost} utilizando  como carga um reostato de 50$\Omega$ / 1kW (utilizar a fonte de tensão em paralelo);
+          
+          	\begin{small}
+              \begin{table}[H]
+                \begin{center}
+                  \caption{Conversor \textit{Boost}.}
+                  \begin{tabular}{l|l|l|l|l}
+                    \hline
+                    Tensão de   &  Corrente de 	& Tensão de & Corrente de	& Rendimento [\%]	\\
+                    entrada [V] &  entrada [A] 	& saída [V] & saída [A]  	& \\
+                    \hline
+                    20 		& 			& 40.0		& 0.60			& 	\\
+                    \hline
+                    20		& 			& 40.0		& 1.00			& 	\\
+                    \hline
+                    20		& 			& 40.0		& 1.50			& 	\\
+                    \hline
+                    20		& 			& 40.0		& 2.00			& 	\\
+                    \hline
+                    20		& 			& 40.0		& 2.50			& 	\\
+                    \hline
+                    30		& 			& 40.0		& 0.70			& 	\\
+                    \hline
+                    30		& 			& 40.0		& 1.00			& 	\\
+                    \hline
+                    30		& 			& 40.0		& 1.50			& 	\\
+                    \hline
+                    30		& 			& 40.0		& 2.00			& 	\\
+                    \hline
+                    30		& 			& 40.0		& 2.50			& 	\\
+                    \hline
+                  \end{tabular}
+                  \label{tab:boost}
+                  
+                  \small Fonte: Roteiro \cite{Roteiro}.
+                \end{center}
+              \end{table}
+            \end{small}
+            
+          \item Montar o circuito da figura 3 (do roteiro em \cite{Roteiro}) e verificar o funcionamento em malha fechada (Vsaída máximo de 40V). O que observou na variação da tensão de saída com relação à entrada no \textit{flyback}? Explique.
+          
+          \item Após montar o circuito da figura 3 (do roteiro em \cite{Roteiro}), preencha a tabela \ref{tab:flyback} utilizando como carga um reostato de de 50$\Omega$ / 1kW (utilizar a fonte de tensão em paralelo);
+          
+          \begin{small}
+            \begin{table}[H]
+              \begin{center}
+                \caption{Conversor \textit{Flyback}.}
+                \begin{tabular}{l|l|l|l|l}
+                  \hline
+                  Tensão de   &  Corrente de 	& Tensão de & Corrente de	& Rendimento [\%]	\\
+                  entrada [V] &  entrada [A] 	& saída [V] & saída [A]  	& \\
+                  \hline
+                  20 		& 			& 35.0		& 0.60			& 	\\
+                  \hline
+                  20		& 			& 35.0		& 0.90			& 	\\
+                  \hline
+                  20		& 			& 35.0		& 1.30			& 	\\
+                  \hline
+                  20		& 			& 35.0		& 1.70			& 	\\
+                  \hline
+                  20		& 			& 35.0		& 2.00			& 	\\
+                  \hline
+                  30		& 			& 35.0		& 0.60			& 	\\
+                  \hline
+                  30		& 			& 35.0		& 1.00			& 	\\
+                  \hline
+                  30		& 			& 35.0		& 1.50			& 	\\
+                  \hline
+                  30		& 			& 35.0		& 2.00			& 	\\
+                  \hline
+                  30		& 			& 35.0		& 2.50			& 	\\
+                  \hline
+                \end{tabular}
+                \label{tab:flyback}
+                
+                \small Fonte: Roteiro \cite{Roteiro}.
+              \end{center}
+            \end{table}
+          \end{small}
+          
+          \item Explique o motivo pelo qual é necessário utilizar um opto-acoplador no controle. Por que no conversor \textit{Boost} ele não foi necessário?
+          
+          \item Caso ocorra variação na temperatura do circuito de controle, haverá variação na tensão do \textit{flyback}? Explique.
+          
+          \item Qual conversor obteve maior rendimento?
+          
+          \item Cite vantagens e desvantagens do CI 3525 em relação ao CI 3524.
+        \end{enumerate}
+ 
+         

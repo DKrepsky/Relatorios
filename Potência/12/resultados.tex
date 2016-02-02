@@ -1,0 +1,106 @@
+\newpage
+\section{Resultados}
+
+  A seguir são apresentados os resultados obtidos de acordo com os itens apresentados na seção 3.
+  
+  \begin{enumerate}
+    \item o circuito foi montado e observamos que a tensão de saída se mantém constante, independente da variação na tensão de entrada. Isso é possível graças ao circuito de controle que utiliza uma realimentação para corrigir o valor da tensão de saída de forma rápida.
+    
+    \item A tabela \ref{tab:boost2} apresenta os dados obtidos durante o experimento.
+    
+    \begin{small}
+      \begin{table}[H]
+        \begin{center}
+          \caption{Rendimento \textit{Boost}.}
+          \begin{tabular}{l|l|l|l|l}
+            \hline
+            Tensão de   &  Corrente de 	& Tensão de & Corrente de	& Rendimento [\%]	\\
+            entrada [V] &  entrada [A] 	& saída [V] & saída [A]  	& \\
+            \hline
+            20 		& 0.85			& 40.0		& 0.60			& 88.2867	\\
+            \hline
+            20		& 1.10			& 40.0		& 1.00			& 87.8898	\\
+            \hline
+            20		& 1.63			& 40.0		& 1.50			& 87.2083	\\
+            \hline
+            20		& 2.26			& 40.0		& 2.00			& 86.4318	\\
+            \hline
+            20		& 2.71			& 40.0		& 2.50			& 85.4747	\\
+            \hline
+            30		& 0.82			& 40.0		& 0.60			& 84.6284	\\
+            \hline
+            30		& 0.70			& 40.0		& 1.00			& 84.6284	\\
+            \hline
+            30		& 1.04			& 40.0		& 1.50			& 84.6284	\\
+            \hline
+            30		& 1.38			& 40.0		& 2.00			& 84.6284	\\
+            \hline
+            30		& 1.76			& 40.0		& 2.50			& 84.6284	\\
+            \hline
+          \end{tabular}
+          \label{tab:boost2}
+        \end{center}
+      \end{table}
+    \end{small}
+    
+    \item De modo semelhante ao circuito com conversor \textit{Boost}, o circuito com flyback também mantém a tensão de saída constante, contudo o mesmo utiliza um acoplador óptico para realizar o \textit{feedback} para o circuito de controle.
+    
+    \item A tabela \ref{tab:flyback2} mostra os dados obtidos para o experimento.
+    
+    \begin{small}
+      \begin{table}[H]
+        \begin{center}
+          \caption{Rendimento \textit{Flyback}.}
+          \begin{tabular}{l|l|l|l|l}
+            \hline
+            Tensão de   &  Corrente de 	& Tensão de & Corrente de	& Rendimento [\%]	\\
+            entrada [V] &  entrada [A] 	& saída [V] & saída [A]  	& \\
+            \hline
+            20 		& 0.64			& 35.0		& 0.60			& 88.2867	\\
+            \hline
+            20		& 0.92			& 35.0		& 0.90			& 87.8898	\\
+            \hline
+            20		& 1.31			& 35.0		& 1.30			& 87.2083	\\
+            \hline
+            20		& 1.74			& 35.0		& 1.70			& 86.4318	\\
+            \hline
+            20		& 2.11			& 35.0		& 2.00			& 85.4747	\\
+            \hline
+            30		& 0.46			& 35.0		& 0.60			& 84.6284	\\
+            \hline
+            30		& 0.65			& 35.0		& 1.00			& 84.6284	\\
+            \hline
+            30		& 0.96			& 35.0		& 1.50			& 84.6284	\\
+            \hline
+            30		& 1.35			& 35.0		& 2.00			& 84.6284	\\
+            \hline
+            30		& 1.72			& 35.0		& 2.50			& 84.6284	\\
+            \hline
+          \end{tabular}
+          \label{tab:flyback2}
+        \end{center}
+      \end{table}
+    \end{small}
+    
+      \item No conversor \textit{Boost} podemos usar um divisor resistivo porque não há isolação galvânica entre o primário e o secundário. Já no conversor \textit{Flyback}, é necessário utilizar um acoplador óptico, pois o transformador isola o primário do secundário.
+      
+      \item Sim. Isso acontece porque o acoplador óptico, assim como a maioria dos semicondutores, é bastante sensível a variações de temperatura. Neste caso o conversor \textit{boost} apresenta um erro menor, pois os resistores variam menos com a variação da temperatura do que os acopladores ópticos.
+      
+      \item De acordo com os dados obtidos, o conversor \textit{Flyback} obteve um melhor rendimento.
+      
+      \item As vantagens são: 
+      
+      \begin{itemize}
+        \item possui \textit{soft-start} integrado;
+        \item permite sincronismo;
+        \item proteção contra subtensão.
+      \end{itemize}
+      
+      As desvantagens são: 
+      
+      \begin{itemize}
+        \item não tem operacional para realimentação de corrente;
+        \item para $K_c$ próximo de 1, é necessário utilizar elementos externos.
+      \end{itemize}
+  \end{enumerate}
+          

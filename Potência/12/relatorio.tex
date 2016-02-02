@@ -1,0 +1,111 @@
+\documentclass[12pt,a4paper]{article}%
+%Options -- Point size:  10pt (default), 11pt, 12pt
+%        -- Paper size:  letterpaper (default), a4paper, a5paper, b5paper
+%                        legalpaper, executivepaper
+%        -- Orientation  (portrait is the default)
+%                        landscape
+%        -- Print size:  oneside (default), twoside
+%        -- Quality      final(default), draft
+%        -- Title page   notitlepage, titlepage(default)
+%        -- Columns      onecolumn(default), twocolumn
+%        -- Equation numbering (equation numbers on the right is the default)
+%                        leqno
+%        -- Displayed equations (centered is the default)
+%                        fleqn (equations start at the same distance from the right side)
+%        -- Open bibliography style (closed is the default)
+%                        openbib
+% For instance the command
+%           \documentclass[a4paper,12pt,leqno]{article}
+% ensures that the paper size is a4, the fonts are typeset at the size 12p
+% and the equation numbers are on the left side
+
+% Tabelas
+\usepackage{multirow}
+
+% Símbolos Matemáticos
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{commath}
+\usepackage{steinmetz}
+\usepackage{mathrsfs}
+
+% Figuras
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{subfigure}
+\graphicspath{ {img/} }
+
+
+% Língua e acentos
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Espaçamento
+\usepackage[top=3cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{indentfirst}
+
+% Pagina em branco
+\usepackage{afterpage}
+\newcommand \blankpage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage}
+
+% Lista de códigos
+\usepackage{caption}
+\usepackage{listings}                  
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+    backgroundcolor=\color{white},
+    basicstyle=\footnotesize,
+    breaklines=true,                 % sets automatic line breaking
+    captionpos=t,                    % sets the caption-position to bottom
+    commentstyle=\color{mygreen},    % comment style
+    extendedchars=true,
+    frame=single,	                 % adds a frame around the code
+    keepspaces=true,                 % useful for keeping indentation of code
+    keywordstyle=\color{blue},       % keyword style
+    language=matlab,                 % the language of the code
+    otherkeywords={...},           	 % if you want to add more keywords
+    numbers=left,                    % where to put the line-numbers
+    numbersep=5pt,                   % how far the numbers are from the code
+    %numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+    rulecolor=\color{black},
+    stepnumber=1,                    % the step between two line-numbers.
+    stringstyle=\color{mymauve},     % string literal style
+    tabsize=2,	                    % sets default tabsize to 2 spaces
+    title=\lstname                   % show the filename of files included
+}
+% Enumerate
+\usepackage{enumitem}
+
+% Diagramas
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\usepackage[numbers]{natbib}
+
+%------------------------------------------------------------------------------
+
+\begin{document}
+
+\input{capa}
+\input{resumo}
+\input{sumario}
+\input{introducao}
+\include{teoria}
+\input{metodologia}
+\input{resultados}
+\input{conclusao}
+\input{referencias}
+\end{document}
