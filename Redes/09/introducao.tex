@@ -1,36 +1,24 @@
 \newpage
 \section{Introdução}
-A modulação PAM (\textit{Pulse Amplitude Modulation}) é uma das formas mais 
-simples de modulação digital. Seu funcionamento consiste em inserir a 
-informação codificada na amplitude do sinal portador. A demodulação é feita 
-detectando-se o nível de amplitude do sinal da portadora, para cada período de 
-símbolo.
 
-Existem dois tipos de PAM: polaridade única e dupla polaridade. Na polaridade 
-única é adicionado um \textit{offset} DC para garantir que todos os pulsos 
-estão acima de 0V. Já polaridade dupla, os pulsos podem assumir valores 
-positivos ou negativos\cite{Stallings}.
- 
-Apesar de simples, a modulação PAM é bastante utilizada\cite{Alencar}. Abaixo 
-segue uma lista 
-com as suas aplicações:
+O método \textit{Orthogonal frequency-division multiplexing} (OFDM) é uma técnica de modulação digital baseada no uso de múltiplas frequências de portadora \cite{Proakis}. Um grande número de sub-portadoras ortogonais, igualmente espaçadas, são utilizadas para transportar dados de forma paralela, onde cada sub-portadora constitui um canal \cite{Lathi}. Cada canal é modulado com um esquema de modulação convencional (tal como QAM ou PSK) com uma taxa de símbolo baixa, mantendo a taxa de transferência total como em um esquema de transmissão de portadora única, para a mesma largura de banda.
+
+A principal vantagem do OFDM em relação a transmissão com portadora única é a capacidade de lidar com condições severas de canal \cite{Stallings}. Por exemplo, a atenuação de frequências altas, interferência de banda estreita e desvanecimento seletivo em frequência.
+
+A equalização de canal também é simplificada, pois a técnica OFDM é vista como vários sinais de baixa frequência com banda estreita em vez de um único sinal de alta frequência e banda larga. A baixa taxa de transferência utiliza um intervalo de guarda (banda de guarda) entre os símbolos, de modo a eliminar a interferência entre símbolos (ISI).
+
+Também é possível utilizar ecos e espalhamento temporal para produzir um ganho de diversidade, melhorando a relação sinal ruído (SNR).
+
+Algumas das aplicações para OFDM são \cite{Proakis}:
 
 \begin{itemize}
-  \item \textbf{Ethernet:} Algumas versões do protocolo Ethernet utilizam a 
-  modulação PAM.
+  \item Televisão Digital;
 
-  \item \textbf{Lâmpadas de LED:} A modulação PAM é utilizada para controlar o 
-  brilho de algumas lâmpadas de LED.
+  \item Internet DSL;
   
-  \item \textbf{TV Digital:} É utilizada no protocolo \textit{8VSB} pelos 
-  padrões do \textit{Advanced Television System Committee} para transmissão em 
-  tv digital.
+  \item Redes wireless;
   
-  \item \textbf{Foto biologia:} O conceito é utilizado em equipamentos que 
-  fazem medidas espectrofluorométricas, sendo empregado no estudo da 
-  fotossíntese em plantas.
+  \item Redes 4G.
 \end{itemize}
 
-Obviamente, a modulação PAM é utilizadas em outras situações além das listadas 
-acima. Deste modo, este trabalho explorar a modulação PAM, com sistema de 
-codificação duobinário.
+Assim, este trabalho explora a técnica OFDM, com modulação 16-QAM e 4-QAM.
