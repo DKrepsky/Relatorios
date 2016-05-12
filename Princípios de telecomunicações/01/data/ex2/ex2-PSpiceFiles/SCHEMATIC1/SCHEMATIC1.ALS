@@ -1,0 +1,5 @@
+.ALIASES
+C_C1            C1(1=N00459 2=N00448 ) CN @EX2.SCHEMATIC1(sch_1):INS57@ANALOG.C.Normal(chips)
+R_R1            R1(1=0 2=N00459 ) CN @EX2.SCHEMATIC1(sch_1):INS82@ANALOG.R.Normal(chips)
+V_V1            V1(+=N00448 -=0 ) CN @EX2.SCHEMATIC1(sch_1):INS819@SOURCE.VAC.Normal(chips)
+.ENDALIASES

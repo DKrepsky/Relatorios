@@ -1,0 +1,6 @@
+* source EX1
+R_RS         N00139 N00156  50  
+R_RL         0 N00156  470  
+L_L1         N00156 0  2u  
+C_C1         0 N00156  22n  
+V_V1         N00139 0 DC 0Vdc AC 1Vac 
