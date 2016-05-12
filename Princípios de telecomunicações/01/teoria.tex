@@ -1,74 +1,93 @@
 \newpage
 \section{Revisão da Teoria}
 
-\subsection{Modulação QPSK}
+\subsection{Circuitos Ressonantes}
+
+Os circuitos ressonantes podem se dispor de duas maneiras, em série ou em 
+paralelo com elementos reativos como capacitor e indutor (figura \ref{fig:01}). 
+São comumente 
+utilizados em circuitos de banda estreita com aplicações em osciladores de 
+baixo ruído.
 
 \begin{figure}[H]
   \centering
-  \caption{Diagrama de blocos do modulador QPSK.}
-  \includegraphics[scale=0.6]{tx}
+  \caption{Circuito ressonante a) série b) paralelo.}
+  \includegraphics[scale=1]{01}
   
-  \small Fonte: iitg.vlab.co.in,. (2012). QPSK Modulation (Real time experiment).
-  \label{fig:tx}
+  \label{fig:01}
 \end{figure}
 
-Na entrada do modulador QPSK (figura \ref{fig:tx}), os bits de dados pares (isto é, bits 0, 2, 4, ..., etc) são removidos da sequência de dados através de um conversor serial-paralelo de 2 bits \cite{Couch} e são multiplicados com uma portadora para gerar um sinal BPSK (chamado de $PSK_I$, equalçao \ref{equ:PSKI}). 
+A frequência de ressonância do circuito pode ser encontrada a partir dos 
+elementos que o compõe. Para o circuito LC paralelo simples a frequência de 
+ressonância é definida pela equação \ref{equ:f0}
 
 \begin{equation}
-  \label{equ:PSKI}
-  PSK_I = A_c\cdot m_{par}(t) \cdot cos \left(2\pi f_c\right), \qquad m_{par}(t) = \, \mbox{1 ou -1.}
+  \label{equ:f0}
+ f_0 = \frac{1}{2 \pi \sqrt{LC}}
 \end{equation}
 
-Ao mesmo tempo, os bits impares (1, 3, 5, ..., etc), também são removidos da sequência de dados pelo conversor série-paralelo e alimentam um segundo modulador BPSK (chamado $PSK_Q$, equação \ref{equ:PSKQ}). 
+\subsection{Filtros Passivos}
+
+Os filtros são circuitos que oferecem uma resposta em frequência com valores 
+significativos em determinadas faixas.  Essas faixas são limitadas de acordo 
+com os elementos do circuito e seus respectivos valores.
+Os filtros passivos não amplificam o sinal de entrada, apenas selecionam 
+frequências. A figura \ref{fig:02} apresenta algumas representações dos 
+diversos tipos de filtros.
+
+\begin{figure}[H]
+  \centering
+  \caption{ FPB, FPA, FPF e FRF.}
+  \includegraphics[scale=1]{01}
+  
+  \label{fig:02}
+\end{figure}
+
+
+\subsubsection{Filtros Passa-Baixas Passivo}
+
+O filtro passa-baixas limita a frequência do sinal de saída entre zero e uma 
+certa frequência de corte, atenuando frequências acima desta. Esse filtro pode 
+ser arranjado de diferentes maneiras e com quantidades diferentes de elementos.
+A figura \ref{fig:03} mostra alguns filtros passa-baixas passivos.
+
+\begin{figure}[H]
+  \centering
+  \caption{Filtro Passa-Baixas, 1ª ordem, 2ª ordem e 3ª ordem.}
+  \includegraphics[scale=1]{01}
+  
+  \label{fig:03}
+\end{figure}
+
+\subsubsection{Filtros Passa-Alta Passivo}
+
+O filtro passa-altas ajusta a frequência do sinal de saída para estar acima da 
+frequência de corte, atenuando frequências abaixo desta. \cite{Stallings}.
+
+\subsection{Fator de Qualidade}
+
+O fator de qualidade é a razão entre a energia armazenada e a energia dissipada 
+em R. Esse dado indica o desempenho do circuito e pode ser encontrado pela 
+seguinte equação:
 
 \begin{equation}
-  \label{equ:PSKQ}
-  PSK_Q = A_c\cdot m_{impar}(t) \cdot sen \left(2\pi f_c\right), \qquad m_{impar}(t) = \, \mbox{1 ou -1.}
+  \label{equ:Q}
+  Q_{Load} = \frac{f_0}{BW_{3DB}}
 \end{equation}
 
-Contudo, esse segundo modulador, PSKQ, possui uma defasagem de 90° em relação ao primeiro modulador, PSKI \cite{Carlson,Proakis}. Os dois sinais BPSK são, então, adicionados e transmitidos, com a mesma frequência de portadora, ou seja, são transmitidos dois sinais BPSK utilizando a mesma faixa de espectro. Isso é possível pois a diferênça de 90° entre a portadora do PSKI e do PSKQ permite que o receptor separe os dados usando discriminação por fase \cite{Lathi}. A figura \ref{fig:onda} mostra a forma de onda produzida pelo modulador QPSK.
+\subsection{Curva de Lissajous}
 
-\begin{figure}[H]
-  \centering
-  \caption{Forma de onda de saída do modulador QPSK.}
-  \includegraphics[scale=0.6]{onda}
-  
-  \small Fonte: iitg.vlab.co.in,. (2012). QPSK Modulation (Real time experiment).
-  \label{fig:onda}
-\end{figure}
-
-
-O sinal resultante da modulação QPSK é descrito na equação \ref{equ:QPSK} \cite{Stallings}.
+A curva de Lissajous é um gráfico obtido a partir de um sistema de equações 
+paramétricas que descreve um comportamento harmônico. É muito utilizada para 
+analisar a defasagem dada por dois sinais.
+Para que a defasagem entre dois sinais possa ser obtida, os valores máximo e 
+mínimo da curva devem ser observados, a distancia entre esses dois pontos 
+representará o parâmetro A, bem como os valores de cruzamento com o eixo y, 
+positivo e negativo, devem ser encontrados, e sua distância representará o 
+parâmetro B. Com esses parâmetros, a defasagem poderá ser obtida através da 
+seguinte equação:
 
 \begin{equation}
-  \label{equ:QPSK}
-  QPSK = A_c\cdot m_{par}(t) \cdot cos \left(2\pi f_c\right) + A_c\cdot m_{impar}(t) \cdot sen \left(2\pi f_c\right), \qquad m(t) = \, \mbox{1 ou -1.}
+\label{equ:lissa}
+\Delta \Theta = sen^{-1}\left(\frac{B}{A}\right)
 \end{equation}
-
-A constelação do sinal QPSK é mostrada na figura \ref{fig:constelation}
-
-\begin{figure}[H]
-  \centering
-  \caption{Constelação do sinal QPSK.}
-  \includegraphics[scale=0.8]{constelation}
-  
-  \small Fonte: iitg.vlab.co.in,. (2012). QPSK Modulation (Real time experiment).
-  \label{fig:constelation}
-\end{figure}
-                  
-
-\subsection{Demodulação QPSK}
-
-Para a demodulação do sinal QPSK, são utilizados dois detectores de produto simultaneamente \cite{Medeiros}. Os dois sinais de dados são então extraídos do sinal QPSK ao mesmo tempo. Os bits são identificados com o emprego de um integrador e um decisor. Em seguida, a mensagem é reconstruída utilizando um decisor, o qual define quais bits foram recebidos, e é recolocada na forma serial por um conversor paralelo-serial de 2 bits.
-
-A figura \ref{fig:rx} mostra o diagrama de blocos para um demodulador QPSK. Note que, apesar dos detectores de produto utilizarem a mesma portadora de referência, em um deles a portadora está defasada de 90°.
-
-\begin{figure}[H]
-  \centering
-  \caption{Diagrama de blocos do receptor QPSK.}
-  \includegraphics[scale=0.6]{rx}
-  
-  \small Fonte: iitg.vlab.co.in,. (2012). QPSK Modulation (Real time experiment).
-  \label{fig:rx}
-\end{figure}
-
