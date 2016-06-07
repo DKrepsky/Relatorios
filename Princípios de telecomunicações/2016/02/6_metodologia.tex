@@ -3,55 +3,42 @@
 
 \section{Metodologia Experimental}
 
-Este experimento foi dividido em 4 circuitos, o qual foram projetados utilizando a tabela de coeficientes normalizados provida pelo professor e, em seguida, foram simulados no programa computacional Cadence Orcad. Abaixo segue a descrição de cada circuito.
-
 \subsection{FPB}
-O primeiro filtro projetado foi um filtro passa-baixas de terceira ordem, com resposta do tipo Butterworth utilizando apenas 1 indutor. A frequência de corte dada é de 4,8 kHz, o resistor da fonte $R_s = 50\ \Omega$ e a carga $R_l = 470\ \Omega$.
 
-Foram analisadas a frequência de corte, atenuação fora da faixa de passagem, atenuação na faixa de passagem e a defasagem ao longo de toda a faixa de frequências.
+Projetar um FPB com resposta Butterworth de 3a. ordem utilizando apenas um 
+indutor, terminações como no caso anterior, isto é, $R_S = 50 \Omega$ e $R_L = 
+470 \Omega$ e $f_c = 5,4 \ kHz$. Implemente e caracterize a resposta em 
+frequência do filtro passivo, determinando experimentalmente os parâmetros que 
+caracterizam o filtro FPB:
 
-A figura \ref{fFPB} mostra o circuito utilizado.\begin{figure}[H]
-    \centering
-    
-    \includegraphics[scale=0.8]{Imagens/fpb.jpg}
-    \label{fFPB}
-    \caption{Filtro desnormalizado passa-baixas.}
-\end{figure}
-
-
+\begin{itemize}
+  \item frequência de corte;
+  \item atenuação fora da faixa de passagem (dB/década);
+  \item atenuação na faixa de passagem;
+  \item defasagem ao longo de toda a faixa de frequências (de passagem e 
+  rejeição).
+\end{itemize}
 
 \subsection{FPA}
-O segundo filtro projetado foi um filtro passa-altas de terceira ordem, com resposta do tipo Butterworth utilizando apenas 1 indutor. A frequência de corte dada é de 4,2 kHz, o resistor da fonte $R_s = 470 \Omega$ e a carga $R_l = 50 \Omega$.
 
-Foram analisadas a frequência de corte, atenuação fora da faixa de passagem, atenuação na faixa de passagem e a defasagem ao longo de toda a faixa de frequências.
+Refaça o item anterior para um FPA com resposta Butterworth de
+3a. ordem utilizando apenas um indutor, terminações $R_S = 470\Omega$ e $R_L = 
+50\Omega$ e $f_c = 4,6 \ kHz$. Implemente e caracterize a resposta em 
+frequência do filtro passivo, anotando os parâmetros que caracterizam o filtro 
+FPA.
 
-A figura \ref{fFPA} mostra o circuito utilizado.\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{Imagens/fpa.jpg}
-    \label{fFPA}
-    \caption{Filtro desnormalizado passa-altas.}
-\end{figure}
-
-\subsection{FPF em cascata}
-No terceiro circuito o filtro FPB e o FPA desenvolvidos anteriormente foram conectados em cascata de forma a formar um filtro passa-faixa, onde foi também analisado a largura de banda passante do filtro.
-
-Na figura \ref{fFPFC} é apresentado o circuito resultante da conexão dos filtro FPA e FPB, na topologia cascata.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{Imagens/fpf1.jpg}
-    \label{fFPFC}
-    \caption{Filtro passa-faixa em cascata.}
-\end{figure}
+\subsection{FPF Cascata}
+Conecte os dois filtros em série (cascata) observando as impedâncias e meça a 
+resposta em frequência do conjunto. Qual a função de transferência 
+correspondente? Quais a(s) nova(s) frequência(s) de corte.
 
 \subsection{FPF}
-O quarto e ultimo filtro foi projetado para ter uma resposta em frequência semelhante a do filtro FPF em cascata. O objetivo foi de analisar as diferenças em se utilizar um filtro FPF e um filtro FPB em conjunto com um filtro FPA.
+Projete um filtro Butterworth com a função de transferência resultante da 
+associação dos filtros do item anterior a partir dos valores tabelados para os
+elementos LC de protótipo.
 
-A figura \ref{fFPF} representa o filtro passa-faixa projetado.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{Imagens/fpf2.jpg}
-    \label{fFPF}
-    \caption{Filtro passa-faixa.}
-\end{figure}
+\begin{itemize}
+  \item implemente novamente o filtro, agora utilizando os elementos de projeto 
+  do item 4.
+  \item compare a resposta em frequência (módulo) com a obtida no item 3a.
+\end{itemize}
