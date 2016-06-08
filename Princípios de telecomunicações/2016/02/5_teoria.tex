@@ -52,4 +52,41 @@ para os filtros citados acima.
 
 \subsection{Frequência de Corte e Largura de Banda}
 A frequência de corte ($f_c$ é a frequência para qual o filtro apresentará uma atenuação de 3dB e é o parâmetro fundamental para o projeto de filtros.
-Outro parâmetro importante para os filtros do tipo passa-faixa e rejeita-faixa é a largura da banda de passagem, a qual é composta por uma frequência de corte inferior (denominada $f_1$) e uma superior ($f_2$).
+Outro parâmetro importante para os filtros do tipo passa-faixa e rejeita-faixa 
+é a largura da banda de passagem, a qual é composta por uma frequência de corte 
+inferior (denominada $f_1$) e uma superior ($f_2$).
+
+\subsection{Projeto de filtros passivos}
+
+\begin{figure}[!ht]
+  \centering
+  \caption{Tabela para projetos de filtros Butterworth de segunda a quarta 
+  ordem.}
+  \includegraphics[scale=0.35]{Imagens/tabela.png}
+  
+  \label{fig:tabela}
+  \small Fonte: Abrão, T. (2002) \cite{abrao}.
+\end{figure}
+
+Para o projeto de filtros passivos, o primeiro passo é o projeto de um filtro 
+passa baixas normalizado. O valor dos componentes do filtro normalizado é 
+obtido através de tabelas que dependem da relação entre a resposta 
+característica desejada (Butterworth, Chebyshev e etc.), a ordem do filtro e a 
+relação entre a resistência da fonte, $R_S$ e a resistência da carga, $R_L$.
+
+A figura \ref{fig:tabela} mostra o exemplo de uma tabela para projeto de 
+filtros normalizados. 
+
+A segunda etapa consiste em converter o filtro normalizado para o tipo de 
+resposta desejada (FPA, FPF, FRF) e com a frequência de corte necessária.
+
+A figura \ref{fig:desnorm} mostra o processo de conversão do filtro.
+
+\begin{figure}[!ht]
+  \centering
+  \caption{Desnormalização do filtro.}
+  \includegraphics[scale=0.35]{Imagens/tabela2.png}
+  
+  \label{fig:desnorm}
+  \small Fonte: Abrão, T. (2002) \cite{abrao}.
+\end{figure}
