@@ -1,0 +1,18 @@
+* source EX1
+V_V6         N02368 0 DC 0Vdc AC 2Vac 
+R_R1         0 N02472  1k  
+V_V5         N00346 0 12
+R_R2         N00305 N00346  100k  
+V_V3         N01388 0  
++SIN 0 1 100k 0 0 0
+R_R3         0 N00305  68k  
+X_R6         N02472 N02320 N02368 POT PARAMS: SET=0.05 VALUE=100k
+Q_Q3         N00346 N00305 N00411 QBF240/PLP 
+R_R4         N00472 N00411  10k  
+R_R5         0 N00571  10k  
+C_C1         N02320 N00305  22u  
+Q_Q4         N00472 N00571 0 QBF240/PLP 
+C_C2         N00472 N00945  1n  
+C_C3         N01388 N00571  100n  
+C_C4         0 N00945  1.1n  
+L_L1         0 N00945  4m  

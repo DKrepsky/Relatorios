@@ -1,0 +1,152 @@
+\newpage
+\section{Resultados}
+
+\subsection{Modulador série}
+
+\subsubsection{Sinal de saída}
+Após a simulação, obtemos a forma de onda mostrada na figura \ref{f_saida_serie}, com o potenciômetro na posição 0.05, ou seja, com quase o máximo índice de modulação.
+
+\begin{figure}[H]
+    \centering
+    \caption{Onda de saída para o modulador série.}
+    \includegraphics[scale=0.4]{saida_serie.pdf}
+    \label{f_saida_serie}
+\end{figure}
+
+Para um índice de modulação maior que 1, foi necessário aumentar a tensão do sinal modulante para 4.5$V_p$. Dessa forma, obtivemos o sinal de saída da figura \ref{f_saida_serie_gamma_ge_1}.
+
+\begin{figure}[H]
+    \centering
+    \caption{Onda de saída para o modulador série com $\gamma \ge 1$.}
+    \includegraphics[scale=0.4]{saida_serie_gamma_ge_1.pdf}
+    \label{f_saida_serie_gamma_ge_1}
+\end{figure}
+
+\subsubsection{Índice de modulação}
+Através do método 1, o valor de $\gamma$ calculado foi de 
+\[ 
+\gamma_1 = \frac{8.8236-3.8763}{8.8236+3.8763} = 0.3895 = 39\%.
+\]
+
+Mudando o eixo X do gráfico para o sinal modulante, obtivemos a imagem da figura \ref{f_trapezio_serie}, de onde foi possível calcular
+\[
+\gamma_2 = \frac{8.9871-3.9223}{8.9871+3.9223} = 0.3923 = 39\%.
+\]
+
+Como podemos observar, os dois métodos deram resultados bastante próximos.
+O desvio observado se deve ao fato da dificuldade em se obter uma medida precisa no gráfico do trapézio.
+
+\begin{figure}[H]
+    \centering
+    \caption{Método do trapézio para o modulador série com $\gamma \le 1$.}
+    \includegraphics[scale=0.4]{trapezio_serie.pdf}
+    \label{f_trapezio_serie}
+\end{figure}
+
+Para $\gamma > 1$, o método do trapézio resultou na imagem da figura \ref{f_trapezio_gamma_ge_1}. É possível observar a não linearidade das amplitudes na curva. Sendo assim, o método do trapézio não é valido para moduladores com índice de modulação maior que 1.
+
+\begin{figure}[H]
+    \centering
+    \caption{Método do trapézio para o modulador série com $\gamma > 1$.}
+    \includegraphics[scale=0.4]{trapezio_gamma_ge_1.pdf}
+    \label{f_trapezio_gamma_ge_1}
+\end{figure}
+
+\subsubsection{Fator de mérito}
+
+Para o calculo do fator de mérito do circuito, o sinal modulante foi substituído por uma fonte do tipo $V_{ac}$ e foi realizada uma simulação do tipo varredura em frequência (\textit{Frequency Sweep}), resultando no gráfico da figura \ref{f_q_serie}.
+
+\begin{figure}[H]
+    \centering
+    \caption{Resposta em frequência do modulador série.}
+    \includegraphics[scale=0.4]{q_serie.pdf}
+    \label{f_q_serie}
+\end{figure}
+
+Com base no gráfico da figura \ref{f_q_serie}, a largura de banda encontrada foi $BW_{3db} = 207 Hz$ e a frequência central $f_c = 107,182 kHz$. Assim, o fator de mérito do circuito é de
+\[
+Q_{load} = \frac{107,182*10^3}{207} = 517,8
+\]
+
+Nota-se que o circuito, apesar de simples, possui um fator de mérito bastante elevado.\\
+
+Foi então determinado o novo valor de $L = 4mH$ e $C = 2.2uF$ de modo a dobrar o fator Q.
+
+A resposta em frequência do circuito ao novo circuito LC é mostrada na figura \ref{f_q_serie2}.
+
+\begin{figure}[H]
+    \centering
+    \caption{Resposta em frequência do modulador série.}
+    \includegraphics[scale=0.4]{q_serie2.pdf}
+    \label{f_q_serie2}
+\end{figure}
+
+É possível observar que houve uma grande melhoria em relação ao anterior.
+
+
+\subsection{Modulador a diodo}
+
+\subsubsection{Filtro} 
+
+Para o calculo do filtro, foi mantida a indutância de 1 mH, sendo assim, foi calculado o valor de $C_1$ de modo que a frequência central do filtro fosse de 110 kHz.
+Então
+\[
+C_1 = \frac{1}{(2\pi f_c)^2 L } = \frac{1}{(2\pi 110*10^3 )^2 1*10^{-3}} = 2.09nF
+\]
+
+\subsubsection{Sinal de saída}
+
+Após a simulação, obtemos o sinal de saída mostrado nas figuras \ref{f_saida_diodo_aberta} e \ref{f_saida_diodo_fechada}, com a chave s1 aberta e fechada, respectivamente. Pode-se observar um pequeno ceifamento do sinal de saída do modulador. Isso ocorre devido as características do diodo utilizado.
+
+\begin{figure}[H]
+    \centering
+    \caption{Saída do modulador a diodo com s1 aberta.}
+    \includegraphics[scale=0.4]{f_saida_diodo_aberta.pdf}
+    \label{f_saida_diodo_aberta}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \caption{Saída do modulador a diodo com s1 fechada.}
+    \includegraphics[scale=0.4]{f_saida_diodo_fechada.pdf}
+    \label{f_saida_diodo_fechada}
+\end{figure}
+
+\subsubsection{Índice de modulação}
+O índice de modulação calculado a partir do sinal da figura \ref{f_saida_diodo}, utilizando o método 1, foi de $\gamma = 0.6462$.
+
+A figura \ref{f_trapezio_diodo} mostra o resultado do método do trapézio (método 2). Como pode ser observado, a curva não é linear em amplitude, devido as distorções causadas pelo diodo. Sendo assim, não foi possível a obtenção do índice de modulação, de forma precisa, a partir deste método.
+
+\begin{figure}[H]
+    \centering
+    \caption{Método do trapézio para modulador a diodo.}
+    \includegraphics[scale=0.4]{trapezio_diodo.pdf}
+    \label{f_trapezio_diodo}
+\end{figure}
+
+\subsubsection{Espectro do sinal modulado}
+A figura \ref{f_fft_diodo} mostra o espectro do sinal de saída do modulador a diodo. Observa-se, novamente, a presença da portadora e das duas raias laterais do sinal AM modulado, que são as características da modulação AM/DSB. Porém, é notável a presença de outras componentes harmônicas no sinal.
+
+\begin{figure}[H]
+    \centering
+    \caption{Espectro do sinal modulado com modulador a diodo.}
+    \includegraphics[scale=0.4]{fft_diodo.pdf}
+    \label{f_fft_diodo}
+\end{figure}
+
+\subsubsection{Fator de mérito}
+O gráfico da resposta em frequência do modulador a diodo é apresentado na figura \ref{f_q_diodo}, de onde podemos extrair o valor de $BW_{3dc} = 3.307 kHz$ e $f_c = 109.9 kHz$. Assim, o fator de mérito do circuito é
+
+\[
+Q_{diodo} = \frac{109,9*10^3}{3,307*10^3} = 33,23. 
+\]
+
+
+\begin{figure}[H]
+    \centering
+    \caption{Resposta em frequência do modulador a diodo.}
+    \includegraphics[scale=0.4]{q_diodo.pdf}
+    \label{f_q_diodo}
+\end{figure}
+
+
