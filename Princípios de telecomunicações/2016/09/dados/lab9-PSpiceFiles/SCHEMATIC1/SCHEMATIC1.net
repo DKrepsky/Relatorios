@@ -1,0 +1,20 @@
+* source LAB9
+R_RL         0 N01349  1k TC=0,0 
+R_RS         N00493 N01329  50 TC=0,0 
+V_V         N00493 0 DC 0Vdc AC 1Vac 
+L_L         0 N01349  53.35uF  
+C_C         N01329 N01349  1.067nF  TC=0,0 
+V_Vs         N02417 0 DC 0Vdc AC 1Vac 
+L_L1         0 N02535  27.9u  
+R_RSs         N02417 N02545  50 TC=0,0 
+C_C1         N02535 N02545  2.496n  TC=0,0 
+C_C2s         N02529 N02535  558.17p  TC=0,0 
+L_L2s         0 N02529  127.8u  
+R_RLs         0 N02529  1k TC=0,0 
+C_C3         N03974 N03952  326.62p  
+R_RS1         N03860 N03946  50  
+L_L2         N03946 N03952  58.14u  
+C_C2         0 N03952  894.45p  
+V_V1         N03860 0 DC 0Vdc AC 1Vac 
+R_RL1         0 N03974  1k  
+L_L3         0 N03952  551.86u  
